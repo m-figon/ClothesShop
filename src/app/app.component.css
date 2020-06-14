@@ -1,0 +1,54 @@
+.app{
+}
+.nav-bar{
+    width:100vw;
+    height:3rem;
+    background-color: azure;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    align-items: center;
+}
+.nav-bar .text{
+    padding: 0rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:auto;
+    height:100%;
+    border-top: 3px solid rgba(0, 0, 0, 0);
+
+}
+.nav-bar h1{
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+.nav-bar .text:hover{
+    border-top: 3px solid black;
+}
+.nav-bar h2{
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    margin-left: 2rem;
+}
+.left{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.middle{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
