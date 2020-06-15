@@ -1,3 +1,52 @@
 .account{
     margin-top:3rem;
+    width:100vw;
+    height:90vh;
+    display: flex;
+}
+.login{
+    width: 55%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.login-form{
+    width:30rem;
+    height:30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-form input{
+    border: 0;
+    width:80%;
+    height:2rem;
+    border-bottom: 1px solid gray;
+    margin-bottom: 3rem;
+}
+.login-form button{
+    width:80%;
+    height:3rem;
+    background-color: black;
+    color: white;
+    border: 0;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.account h1{
+    font-size: 1.2rem;
+}
+.account h2{
+    font-size: 1.5rem;
+}
+.register{
+    width: 45%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(230, 230, 230);
 }

@@ -3,12 +3,13 @@
 .nav-bar{
     width:100vw;
     height:3rem;
-    background-color: azure;
+    background-color: white;
     position: fixed;
     top:0;
     left:0;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid rgb(206, 206, 206);
 }
 .nav-bar .text{
     padding: 0rem 0.5rem;
@@ -18,7 +19,8 @@
     width:auto;
     height:100%;
     border-top: 3px solid rgba(0, 0, 0, 0);
-
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 .nav-bar h1{
     font-weight: 300;
@@ -27,6 +29,10 @@
 }
 .nav-bar .text:hover{
     border-top: 3px solid black;
+}
+.nav-bar .right img{
+    width:2rem;
+    height:2rem;
 }
 .nav-bar h2{
     font-weight: 700;

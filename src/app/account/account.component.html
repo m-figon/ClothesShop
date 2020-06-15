@@ -1,4 +1,15 @@
 <div class="account">
-    <p>account works!</p>
 
+    <div class="login">
+        <div class="login-form">
+            <h2>Are you already an user?</h2>
+            <input [(ngModel)]="Email" type="text" (focus)="focus('Email')" (blur)="blur('Email')">
+            <input [(ngModel)]="Password" type="text" (focus)="focus('Password')" (blur)="blur('Password')">
+            <button>Login</button>
+            <h1>I do not remember password</h1>
+        </div>
+    </div>
+    <div class="register">
+
+    </div>
 </div>
