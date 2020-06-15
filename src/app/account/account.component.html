@@ -1,15 +1,42 @@
 <div class="account">
+    <ng-container *ngIf="login">
 
-    <div class="login">
-        <div class="login-form">
-            <h2>Are you already an user?</h2>
-            <input [(ngModel)]="Email" type="text" (focus)="focus('Email')" (blur)="blur('Email')">
-            <input [(ngModel)]="Password" type="text" (focus)="focus('Password')" (blur)="blur('Password')">
-            <button>Login</button>
-            <h1>I do not remember password</h1>
+        <div class="login">
+            <div class="login-form">
+                <h2>Are you already an user?</h2>
+                <p *ngIf="wrongData">Incorrect data</p>
+                <input [(ngModel)]="Email" type="text" (focus)="focus('Email')" (blur)="blur('Email')">
+                <p *ngIf="emptyLogin">This field is required</p>
+                <input [(ngModel)]="Password" type="text" (focus)="focus('Password')" (blur)="blur('Password')">
+                <p *ngIf="emptyPassword">This field is required</p>
+                <button id="black" (click)="loginFunc()">Login</button>
+                <h1>I do not remember password</h1>
+            </div>
         </div>
-    </div>
-    <div class="register">
+        <div class="register">
+            <div class="register-form">
+                <h2>Are you here first time?</h2>
+                <button id="cream" (click)="changeView()">Create an account</button>
 
-    </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="register">
+        <div class="login">
+            <div class="login-form">
+                <h2>Are you already an user?</h2>
+                <button id="white" (click)="changeView()">Login</button>
+            </div>
+        </div>
+        <div class="register">
+            <div class="register-form">
+                <h2>Are you here first time?</h2>
+                <input [(ngModel)]="Email" type="text" (focus)="focus('Email')" (blur)="blur('Email')">
+                <input [(ngModel)]="Name" type="text" (focus)="focus('Name')" (blur)="blur('Name')">
+                <input [(ngModel)]="Surname" type="text" (focus)="focus('Surname')" (blur)="blur('Surname')">
+                <input [(ngModel)]="Password" type="text" (focus)="focus('Password')" (blur)="blur('Password')">
+                <button id="black">Create an account</button>
+            </div>
+        </div>
+    </ng-container>
 </div>

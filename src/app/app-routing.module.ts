@@ -4,6 +4,7 @@ import { AccountComponent } from './account/account.component';
 import { HomeComponent } from './home/home.component';
 import { OfferComponent } from './offer/offer.component';
 import { CartComponent } from './cart/cart.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -15,7 +16,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), HttpClientModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
