@@ -3,14 +3,25 @@
 
         <div class="login">
             <div class="login-form">
+                <div  *ngIf="tooltip" class="password">
+                    <div class="password-frame">
+                        <div class="password-content">
+                            <button (click)="showHideTooltip(false)" id="password-x">X</button>
+                            <h1>I forgot my password</h1>
+                            <input>
+                            <button id="black">SEND</button>
+                        </div>
+                    </div>
+
+                </div>
                 <h2>Are you already an user?</h2>
                 <p *ngIf="wrongData">Incorrect data</p>
                 <input [(ngModel)]="Email" type="text" (focus)="focus('Email')" (blur)="blur('Email')">
-                <p *ngIf="emptyLogin">This field is required</p>
+                <p *ngIf="emptyEmail">This field is required</p>
                 <input [(ngModel)]="Password" type="text" (focus)="focus('Password')" (blur)="blur('Password')">
                 <p *ngIf="emptyPassword">This field is required</p>
                 <button id="black" (click)="loginFunc()">Login</button>
-                <h1>I do not remember password</h1>
+                <h1 (click)="showHideTooltip(true)">I do not remember password</h1>
             </div>
         </div>
         <div class="register">
@@ -32,11 +43,16 @@
             <div class="register-form">
                 <h2>Are you here first time?</h2>
                 <input [(ngModel)]="Email" type="text" (focus)="focus('Email')" (blur)="blur('Email')">
+                <p *ngIf="emptyEmail">Data is not correct</p>
                 <input [(ngModel)]="Name" type="text" (focus)="focus('Name')" (blur)="blur('Name')">
+                <p *ngIf="emptyName">Data is not correct</p>
                 <input [(ngModel)]="Surname" type="text" (focus)="focus('Surname')" (blur)="blur('Surname')">
+                <p *ngIf="emptySurname">Data is not correct</p>
                 <input [(ngModel)]="Password" type="text" (focus)="focus('Password')" (blur)="blur('Password')">
-                <button id="black">Create an account</button>
+                <p *ngIf="emptyPassword">Data is not correct</p>
+                <button id="black" (click)="registerFunc()">Create an account</button>
             </div>
         </div>
     </ng-container>
+
 </div>

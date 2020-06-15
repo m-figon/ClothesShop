@@ -15,15 +15,20 @@ export class AccountComponent implements OnInit {
   login=true;
   register=false;
   users;
-  emptyLogin;
+  emptyEmail;
   emptyPassword;
+  emptyName;
+  emptySurname;
   wrongData;
+  tooltip;
   constructor(private http: HttpClient, private appService: AppService) { }
   changeView(){
     this.login=!this.login;
     this.register=!this.register;
-    this.emptyLogin=false;
+    this.emptyEmail=false;
     this.emptyPassword=false;
+    this.emptyName=false;
+    this.emptySurname=false;
     this.wrongData=false;
     this.Email="Email";
     this.Password="Password";
@@ -53,14 +58,16 @@ export class AccountComponent implements OnInit {
     for(let item of this.users){
       if(this.Email===item.email && this.Password===item.password){
         alert('correct user');
-        this.emptyLogin=false;
+        this.emptyEmail=false;
         this.emptyPassword=false;
+        this.emptyName=false;
+        this.emptySurname=false;
         this.wrongData=false;
         this.appService.setAccount(this.Email);
       }
     }
     if(this.Email==="" || this.Email===" " || this.Email==="Email"){
-      this.emptyLogin=true;
+      this.emptyEmail=true;
     }
     if(this.Password==="" || this.Password===" " || this.Password==="Password"){
       this.emptyPassword=true;
@@ -68,6 +75,58 @@ export class AccountComponent implements OnInit {
     if(this.Email!=="" && this.Email!==" " && this.Email!=="Email" && this.Password!=="" && this.Password!==" " && this.Password!=="Password"){
       this.wrongData=true;
     }
+  }
+  showHideTooltip(value){
+    this.tooltip=value;
+  }
+  registerFunc(){
+    let correctFlag=true;
+      if(!(this.Email.match(/^[a-z0-9\._\-]+@[a-z0-9\.\-]+\.[a-z]{2,4}$/)===null) && this.Email!=="" && this.Email!==" " && this.Email!=="Email"){
+        console.log('email correct');
+        this.emptyEmail=false;
+      }else{
+        this.emptyEmail=true;
+        correctFlag=false;
+      }
+      if(!(this.Name.match(/^[a-zA-Z0-9\.\-_]{4,10}$/)===null) && this.Name!=="" && this.Name!==" " && this.Name!=="Name"){
+        console.log('name correct');
+        this.emptyName=false;
+      }else{
+        this.emptyName=true;
+        correctFlag=false;
+      }
+      if(!(this.Surname.match(/^[a-zA-Z0-9\.\-_]{4,10}$/)===null) && this.Surname!=="" && this.Surname!==" " && this.Surname!=="Surname"){
+        console.log('surname correct');
+        this.emptySurname=false;
+      }else{
+        this.emptySurname=true;
+        correctFlag=false;
+      }
+      if(!(this.Password.match(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\.\-_@$!%*#?&])[A-Za-z\d\.\-_@$!%*#?&]{8,13}$/)===null) && this.Password!=="" && this.Password!==" " && this.Password!=="Password"){
+        console.log('password correct');
+        this.emptyPassword=false;
+      }else{
+        this.emptyPassword=true;
+        correctFlag=false;
+      }
+      if(correctFlag){
+        this.http.post<any>("https://rocky-citadel-32862.herokuapp.com/ClothesShop/users", {
+        email: this.Email,
+        name: this.Name,
+        surname: this.Surname,
+        password: this.Password,
+      }).toPromise().then(data=>{
+        console.log(data);
+        this.emptyEmail=false;
+        this.emptyPassword=false;
+        this.emptyName=false;
+        this.emptySurname=false;
+        this.wrongData=false;
+        alert('new user created');
+      })
+      }else{
+        this.wrongData=true;
+      }
   }
 
 }
