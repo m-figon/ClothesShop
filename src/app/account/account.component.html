@@ -8,8 +8,9 @@
                         <div class="password-content">
                             <button (click)="showHideTooltip(false)" id="password-x">X</button>
                             <h1>I forgot my password</h1>
-                            <input>
-                            <button id="black">SEND</button>
+                            <input [(ngModel)]="resetEmail" type="text" (focus)="focus('resetEmail')" (blur)="blur('resetEmail')">
+                            <input [(ngModel)]="resetPassword" type="{{passwordType}}" (focus)="focus('resetPassword')" (blur)="blur('resetPassword')">
+                            <button id="black" (click)="changePassword()">SEND</button>
                         </div>
                     </div>
 
@@ -18,7 +19,7 @@
                 <p *ngIf="wrongData">Incorrect data</p>
                 <input [(ngModel)]="Email" type="text" (focus)="focus('Email')" (blur)="blur('Email')">
                 <p *ngIf="emptyEmail">This field is required</p>
-                <input [(ngModel)]="Password" type="text" (focus)="focus('Password')" (blur)="blur('Password')">
+                <input [(ngModel)]="Password" type="{{passwordType}}" (focus)="focus('Password')" (blur)="blur('Password')">
                 <p *ngIf="emptyPassword">This field is required</p>
                 <button id="black" (click)="loginFunc()">Login</button>
                 <h1 (click)="showHideTooltip(true)">I do not remember password</h1>
@@ -48,7 +49,7 @@
                 <p *ngIf="emptyName">Data is not correct</p>
                 <input [(ngModel)]="Surname" type="text" (focus)="focus('Surname')" (blur)="blur('Surname')">
                 <p *ngIf="emptySurname">Data is not correct</p>
-                <input [(ngModel)]="Password" type="text" (focus)="focus('Password')" (blur)="blur('Password')">
+                <input [(ngModel)]="Password"type="{{passwordType}}" (focus)="focus('Password')" (blur)="blur('Password')">
                 <p *ngIf="emptyPassword">Data is not correct</p>
                 <button id="black" (click)="registerFunc()">Create an account</button>
             </div>
