@@ -10,6 +10,7 @@ import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import { AppService } from './app.service';
 import { DetailsComponent } from './details/details.component';
+import { ChoiceComponent } from './choice/choice.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DetailsComponent } from './details/details.component';
     HomeComponent,
     OfferComponent,
     CartComponent,
-    DetailsComponent
+    DetailsComponent,
+    ChoiceComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,9 @@
 <div class="details">
-    <ng-container *ngIf="content">
-    <div class="clothes" *ngFor="let item of content">
-        <div class="cloth">
-            <img src="{{item.img}}">
-            <h1 id="red">{{item.price}} PLN</h1>
-            <h1>{{item.name}}</h1>
-        </div>
-        
+    <div class="detail">
+        <h1>{{post[id].name}}</h1>
+        <img src="{{post[id].img}}">
+        <h1>{{post[id].price}}</h1>
+        <button>ADD TO CART</button>
     </div>
-</ng-container>
 
 </div>

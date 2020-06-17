@@ -1,36 +1,30 @@
 .details{
     margin-top:3rem;
     width:100vw;
-    height:90vh;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    
-}
-.clothes{
+    height:90vh; 
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    align-items: center;   
 }
-.cloth{
+.detail{
+    width: 30rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 12rem;
-    height: 20rem;
 }
-.cloth img{
-    width: 13rem;
-    height:15rem;
-    margin-bottom: 0.5rem;
-    border: 1px solid rgb(228, 228, 228);
+.detail img{
+    height:20rem;
+    width:15rem;
 }
-#red{
-    color: rgb(131, 3, 3);
+.detail button{
+    height:3rem;
+    background-color: black;
+    color: white;
+    border: 0;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
-.cloth h1{
-    font-size: 1.0rem;
-    margin-top: 0;
-    margin-bottom: 0;
+.detail button:hover{
+    cursor: pointer;
 }

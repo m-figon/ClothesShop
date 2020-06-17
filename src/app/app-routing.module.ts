@@ -6,6 +6,7 @@ import { OfferComponent } from './offer/offer.component';
 import { CartComponent } from './cart/cart.component';
 import {HttpClientModule} from '@angular/common/http';
 import { DetailsComponent } from './details/details.component';
+import { ChoiceComponent } from './choice/choice.component';
 
 
 
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'account', component: AccountComponent },
   { path: 'cart', component: CartComponent },
   { path: ':type', component: OfferComponent },
-  { path: ':type/:details', component: DetailsComponent },
+  { path: ':type/:details', component: ChoiceComponent },
+  { path: ':type/:details/:id', component: DetailsComponent },
 ];
 
 @NgModule({

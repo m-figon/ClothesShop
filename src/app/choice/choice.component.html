@@ -1,0 +1,13 @@
+<div class="choice">
+    <ng-container *ngIf="content">
+    <div class="clothes" *ngFor="let item of content">
+        <a routerLink="/{{gender}}/{{type}}/{{item.id}}" routerLinkActive="active" [state]="content"><div class="cloth">
+            <img src="{{item.img}}">
+            <h1 id="red">{{item.price}} PLN</h1>
+            <h1>{{item.name}}</h1>
+        </div></a>
+        
+    </div>
+</ng-container>
+
+</div>
