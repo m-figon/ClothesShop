@@ -13,21 +13,57 @@
 <div class="app">
   <div class='nav-bar'>
     <div class="left">
-      <a routerLink="/" routerLinkActive="active"><h2>CLOTHES-SHOP</h2></a>
+      <a routerLink="/" routerLinkActive="active">
+        <h2>CLOTHES-SHOP</h2>
+      </a>
     </div>
     <div class="middle">
       <div class="left">
-        <a routerLink="/woman" routerLinkActive="active"><div class="text"><h1>WOMAN</h1></div></a>
-        <a routerLink="/man" routerLinkActive="active"><div class="text"><h1>MAN</h1></div></a>
+        <a routerLink="/woman" routerLinkActive="active">
+          <div (mouseenter)="hoverFunc('woman')" class="text">
+            <h1>WOMAN</h1>
+          </div>
+        </a>
+        <div class="options-woman">
+          <ng-container *ngIf="woman">
+            <a routerLink="/woman/tops"  routerLinkActive="active"><h1 (click)="closeFunc()">Tops</h1></a>
+            <a routerLink="/woman/pants" routerLinkActive="active"><h1 (click)="closeFunc()">Pants</h1></a>
+            <a routerLink="/woman/pants" routerLinkActive="active"><h1 (click)="closeFunc()">Boots</h1></a>
+            <a routerLink="/woman/pants" routerLinkActive="active"><h1 (click)="closeFunc()">Dresses</h1></a>
+          </ng-container>
+        </div>
+        <a routerLink="/man" routerLinkActive="active">
+          <div (mouseenter)="hoverFunc('man')" class="text">
+            <h1>MAN</h1>
+          </div>
+        </a>
+        <div class="options-man">
+          <ng-container *ngIf="man">
+            <a routerLink="/man/tops" routerLinkActive="active"><h1 (click)="closeFunc()">Tops</h1></a>
+            <a routerLink="/man/pants" routerLinkActive="active"><h1 (click)="closeFunc()">Pants</h1></a>
+            <a routerLink="/man/boots" routerLinkActive="active"><h1 (click)="closeFunc()">Boots</h1></a>
+            <a routerLink="/man/suits" routerLinkActive="active"><h1 (click)="closeFunc()">Suits</h1></a>
+          </ng-container>
+        </div>
+
       </div>
     </div>
     <div class="right">
-      <a routerLink="/account" routerLinkActive="active"><div class="text"><h1>{{account}}</h1><img src="assets/img/user.png"></div></a> 
+      <a routerLink="/account" routerLinkActive="active">
+        <div class="text">
+          <h1>{{account}}</h1><img src="assets/img/user.png">
+        </div>
+      </a>
       <img src="assets/img/search.png">
-      <a routerLink="/cart" routerLinkActive="active"><div class="text"><h1>CART</h1></div></a>
+      <a routerLink="/cart" routerLinkActive="active">
+        <div class="text">
+          <h1>CART</h1>
+        </div>
+      </a>
     </div>
-
   </div>
+
+
 </div>
 
 

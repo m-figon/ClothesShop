@@ -9,8 +9,17 @@ import { AppService } from './app.service';
 export class AppComponent implements OnInit {
   title = 'clothes-shop';
   account="YOUR ACCOUNT";
+  woman=false;
+  man=false;
   constructor(private appService: AppService){
 
+  }
+  hoverFunc(type){
+    eval('this.'+type+'= !this.'+type);
+  }
+  closeFunc(){
+    this.woman=false;
+    this.man=false;
   }
   ngOnInit(): void {
     setInterval(()=>{
