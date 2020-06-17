@@ -12,7 +12,7 @@ export class AccountComponent implements OnInit {
   Password = "Password";
   Name = "Name";
   resetEmail = "Email"
-  resetPassword = "Password";
+  resetPassword = "New Password";
   Surname = "Surname";
   login = true;
   register = false;
@@ -49,7 +49,7 @@ export class AccountComponent implements OnInit {
     if (value1 === "resetEmail" && this.resetEmail === "Email") {
       this.resetEmail = "";
     }
-    if (value1 === "resetPassword" && this.resetPassword === "Password") {
+    if (value1 === "resetPassword" && this.resetPassword === "New Password") {
       this.resetPassword = "";
       this.passwordType="password";
     }
@@ -67,7 +67,7 @@ export class AccountComponent implements OnInit {
       this.resetEmail = "Email";
     }
     if (value1 === "resetPassword" && (this.resetPassword === " " || this.resetPassword === "" || this.resetPassword === "resetPassword")) {
-      this.resetPassword = "Password";
+      this.resetPassword = "New Password";
       this.passwordType="text";
     }
     
@@ -106,7 +106,7 @@ export class AccountComponent implements OnInit {
     this.Email = "Email";
     this.Password = "Password";
     this.resetEmail = "Email";
-    this.resetPassword = "Password";
+    this.resetPassword = "New Password";
     this.passwordType = "text";
   }
   changePassword() {

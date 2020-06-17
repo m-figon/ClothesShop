@@ -22,7 +22,7 @@
                 <input [(ngModel)]="Password" type="{{passwordType}}" (focus)="focus('Password')" (blur)="blur('Password')">
                 <p *ngIf="emptyPassword">This field is required</p>
                 <button id="black" (click)="loginFunc()">Login</button>
-                <h1 (click)="showHideTooltip(true)">I do not remember password</h1>
+                <h1 (click)="showHideTooltip(true)" id="underline">I do not remember password</h1>
             </div>
         </div>
         <div class="register">

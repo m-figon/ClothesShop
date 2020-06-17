@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'account', component: AccountComponent },
   { path: 'cart', component: CartComponent },
-  { path: '**', component: OfferComponent },
+  { path: ':type', component: OfferComponent },
 ];
 
 @NgModule({

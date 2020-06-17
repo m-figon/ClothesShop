@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-offer',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./offer.component.css']
 })
 export class OfferComponent implements OnInit {
-
-  constructor() { }
+  type;
+  ad;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    setInterval(()=>{
+      this.type = (this.route.snapshot.paramMap.get('type'));
+    if(this.type==="man"){
+      this.ad="assets/img/man.jpg"
+    }
+    if(this.type==="woman"){
+      this.ad="assets/img/woman.jpg"
+    }
+    },500)
+    
   }
 
 }

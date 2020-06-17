@@ -3,6 +3,7 @@
     width:100vw;
     height:90vh;
     display: flex;
+    overflow: hidden;
 }
 .imgs{
     width:300vw;
