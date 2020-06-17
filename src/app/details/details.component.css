@@ -1,3 +1,36 @@
 .details{
     margin-top:3rem;
+    width:100vw;
+    height:90vh;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    
+}
+.clothes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.cloth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 12rem;
+    height: 20rem;
+}
+.cloth img{
+    width: 13rem;
+    height:15rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgb(228, 228, 228);
+}
+#red{
+    color: rgb(131, 3, 3);
+}
+.cloth h1{
+    font-size: 1.0rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
