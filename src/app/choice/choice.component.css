@@ -2,15 +2,13 @@
     margin-top:3rem;
     width:100vw;
     height:90vh;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    
-}
-.clothes{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+}
+.clothes{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }
 .cloth{
     display: flex;
@@ -19,6 +17,7 @@
     flex-direction: column;
     width: 12rem;
     height: 20rem;
+    margin: 0 2rem;
 }
 .cloth img{
     width: 13rem;

@@ -1,4 +1,19 @@
 <div class="offer">
     <img src="{{ad}}">
-    <div class="ad-text"><h1>{{type | uppercase}}</h1></div>
+    <div class="ad-text">
+        <h1>{{type | uppercase}}</h1>
+    </div>
+    <div class="offers" *ngFor="let item of content">
+        <ng-container *ngFor="let elem of item.content">
+            <ng-container *ngIf="elem.price>100">
+                <a routerLink="/{{type}}/{{item.type}}/{{elem.id}}" routerLinkActive="active" [state]="item.content">
+                    <div class="single-offer">
+                        <img src="{{elem.img}}">
+                        <h1 id="red">{{elem.price}} PLN</h1>
+                        <h1>{{elem.name}}</h1>
+                    </div>
+                </a>
+            </ng-container>
+        </ng-container>
+    </div>
 </div>
