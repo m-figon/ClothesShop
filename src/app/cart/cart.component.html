@@ -3,7 +3,6 @@
         <div class="products" *ngFor="let item of cart; index as i">
             <button (click)="deleteItem(i)"></button>
             <div class="product">
-                <h1>{{item.quantity}}</h1>
                 <img src="{{item.img}}">
                 <h1 id="red">{{item.price}} PLN</h1>
                 <h1>{{item.name}}</h1>

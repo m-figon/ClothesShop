@@ -116,23 +116,15 @@ export class AccountComponent implements OnInit {
         email: item.email,
         name: item.name,
         surname: item.surname,
-        password: this.resetPassword
+        password: this.resetPassword,
+        cart: item.cart,
+        id: item.id
       }).toPromise().then(data => {
         console.log(data);
         alert('user password changed');
       })
       }
     }
-    /*
-"email": "slickj@gmail.com",
-		"name": "Mateusz",
-		"surname": "Figon",
-		"password": "hello1",
-    */
-    
-      
-    
-
   }
   registerFunc() {
     let correctFlag = true;
@@ -170,6 +162,7 @@ export class AccountComponent implements OnInit {
         name: this.Name,
         surname: this.Surname,
         password: this.Password,
+        cart: []
       }).toPromise().then(data => {
         console.log(data);
         this.emptyEmail = false;
