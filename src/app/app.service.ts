@@ -12,8 +12,19 @@ export class AppService {
     console.log(value);
   }
   sendToCart(value){
+    /*
+    for(let item of this.cart){
+      if(item.name===value.name && item.size===value.size){
+        value.quantity++;
+        console.log(this.cart);
+        return;
+      }
+    }
+    */
+   console.log(value);
     this.cart.push(value);
     console.log(this.cart);
+    return;
   }
   getCart(){
     return this.cart;

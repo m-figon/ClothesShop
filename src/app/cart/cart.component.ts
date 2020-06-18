@@ -11,9 +11,10 @@ export class CartComponent implements OnInit {
   constructor(private appService: AppService) { }
   cart;
   ngOnInit(): void {
-    setInterval(()=>{
       this.cart=this.appService.getCart();
-    },500)
+  }
+  deleteItem(id){
+    this.cart.splice(id,1);
   }
 
 }

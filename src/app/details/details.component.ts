@@ -10,7 +10,7 @@ import { AppService } from '../app.service';
 export class DetailsComponent implements OnInit {
   post;
   id;
-  size;
+  size="size";
   constructor(private route: ActivatedRoute, private appService: AppService) { }
 
   ngOnInit(): void {
@@ -19,8 +19,15 @@ export class DetailsComponent implements OnInit {
 
   }
   addToCart(){
-    this.post[this.id]["size"] = this.size;
-    this.appService.sendToCart(this.post[this.id]);
+    if(this.size!=="size"){
+      console.log(this.size);
+      this.post[this.id]["size"] = this.size;
+      this.post[this.id]["quantity"] = 1;
+      this.appService.sendToCart(this.post[this.id]);
+    }else{
+      alert('select size!');
+    }
+    
   }
 
 }
