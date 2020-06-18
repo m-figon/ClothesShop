@@ -48,10 +48,17 @@
     </div>
     <div class="right">
       <a routerLink="/account" routerLinkActive="active">
-        <div class="text">
+        <div (mouseenter)="hoverFunc('ac')" class="text">
           <h1>{{account}}</h1><img src="assets/img/user.png">
         </div>
       </a>
+      <div class="options-account">
+        <ng-container *ngIf="accountCheck() && ac">
+          <a routerLink="/woman/tops"  routerLinkActive="active"><h1 (click)="closeFunc()">ACCOUNT SETTINGS</h1></a>
+          <a routerLink="/woman/pants" routerLinkActive="active"><h1 (click)="closeFunc()">MY ORDERS</h1></a>
+          <h1 (click)="logout()">SIGN OUT</h1>
+        </ng-container>
+      </div>
       <img src="assets/img/search.png">
       <a routerLink="/cart" routerLinkActive="active">
         <div class="text">

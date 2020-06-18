@@ -1,3 +1,29 @@
 .cart{
     margin-top:3rem;
+    width:100vw;
+    height:90vh;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    
+}
+.products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.prodcut{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 12rem;
+    height: 20rem;
+}
+.product img{
+    width:8rem;
+    height:12rem;
+}
+.product h1{
+    font-size: 1.2rem;
 }

@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   account="YOUR ACCOUNT";
   woman=false;
   man=false;
+  ac=false;
   constructor(private appService: AppService){
 
   }
@@ -20,6 +21,19 @@ export class AppComponent implements OnInit {
   closeFunc(){
     this.woman=false;
     this.man=false;
+    this.ac=false;
+  }
+  logout(){
+    this.closeFunc();
+    this.appService.setAccount("YOUR ACCOUNT");
+    this.account=this.appService.getAccount();
+  }
+  accountCheck(){
+    if(this.account!=="YOUR ACCOUNT"){
+      return true;
+    }else{
+      return false;
+    }
   }
   ngOnInit(): void {
     setInterval(()=>{

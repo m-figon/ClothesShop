@@ -1,4 +1,12 @@
 <div class="cart">
-    <p>cart works!</p>
-
+    <ng-container *ngIf="cart">
+        <div class="products" *ngFor="let item of cart">
+            <div class="product">
+                <img src="{{item.img}}">
+                <h1 id="red">{{item.price}} PLN</h1>
+                <h1>{{item.name}}</h1>
+            </div>
+        </div>
+    </ng-container>
 </div>
+

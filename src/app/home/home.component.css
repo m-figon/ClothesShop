@@ -5,6 +5,25 @@
     display: flex;
     overflow: hidden;
 }
+.ad-text{
+    position: absolute;
+    top:40%;
+    left:35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    border-radius: 3px;
+    padding-left: 2rem;
+    width:25rem;
+    background-color: rgba(0, 0, 0, 0.377);
+}
+.ad-text h1{
+    font-size: 4rem;
+    color:white;
+    text-shadow: 1px 1px 10px rgb(85, 85, 85);
+    letter-spacing: 10px;
+}
 .imgs{
     width:300vw;
     display: flex;
