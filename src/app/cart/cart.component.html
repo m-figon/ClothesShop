@@ -1,14 +1,30 @@
+<ng-container *ngIf="logedUser; else other_content">
 <div class="cart">
-    <ng-container *ngIf="cart">
-        <div class="products" *ngFor="let item of cart; index as i">
-            <button (click)="deleteItem(i)"></button>
-            <div class="product">
-                <img src="{{item.img}}">
-                <h1 id="red">{{item.price}} PLN</h1>
-                <h1>{{item.name}}</h1>
-                <h1>SIZE: {{item.size}}</h1>
+        <ng-container *ngIf="cart">
+            <div class="products" *ngFor="let item of cart; index as i">
+                <button (click)="deleteItem(i)"></button>
+                <div class="product">
+                    <img src="{{item.img}}">
+                    <div class="one-line">
+                        <ng-container *ngIf="item.discount>0">
+                            <h1 id="red">{{item.price-item.discount | number:'1.2'}} PLN</h1>
+                        </ng-container>
+                        <h1 [style.textDecoration]="item.discount>0? 'line-through': ''">{{item.price}} PLN</h1>
+                    </div>
+                    <h1>{{item.name}}</h1>
+                    <h1>SIZE: {{item.size}}</h1>
+                </div>
             </div>
-        </div>
-    </ng-container>
+        </ng-container>
+        <ng-container *ngIf="!cart">
+            <div class="one-line-display">
+                <div class="one-line"><h1>Your cart is empty</h1></div>
+            </div>
+        </ng-container>
 </div>
-
+</ng-container>
+<ng-template #other_content>
+    <div class="one-line-display">
+        <div class="one-line"><h1>To use cart </h1><a routerLink="/account" routerLinkActive="active"><h1 id="link">sign in!</h1></a></div>
+    </div>
+</ng-template>

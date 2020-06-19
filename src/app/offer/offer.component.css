@@ -29,10 +29,12 @@
     text-shadow: 1px 1px 10px rgb(85, 85, 85);
     letter-spacing: 10px;
 }
-.offers{
+.one-line{
     display: flex;
-    justify-content: center;
-    align-items: center;
+}
+.offers{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }
 .single-offer{
     display: flex;
@@ -51,6 +53,7 @@
 }
 #red{
     color: rgb(131, 3, 3);
+    margin-right: 1rem;
 }
 .single-offer h1{
     font-size: 1.0rem;

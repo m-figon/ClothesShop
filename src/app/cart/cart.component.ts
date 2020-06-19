@@ -13,10 +13,12 @@ export class CartComponent implements OnInit {
   cart;
   users;
   id;
+  logedUser;
   cartInit(){
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/users').subscribe(data => {
       //console.log(data);
       this.users = data;
+      this.logedUser=this.appService.getAccount();
       console.log(this.users);
       for (let item of this.users) {
         if (item.email === this.appService.getAccount()) {

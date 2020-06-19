@@ -14,9 +14,15 @@
                 <option value="L">L</option>
                 <option value="XL">XL</option>
             </select>
-            <button (click)="addToCart()">ADD TO CART</button>
+            <ng-container *ngIf="logedUser">
+                <button (click)="addToCart()">ADD TO CART</button>
+            </ng-container>
+            <ng-container *ngIf="!logedUser">
+                <div class="one-line"><h1>To add item to cart </h1><a routerLink="/account" routerLinkActive="active"><h1 id="link">sign in!</h1></a></div>
+            </ng-container>
+
         </div>
-        
+
     </div>
 
 </div>

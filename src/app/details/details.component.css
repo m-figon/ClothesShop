@@ -56,3 +56,13 @@
 .detail h1 {
     font-size: 1.2rem;
 }
+.one-line{
+    display: flex;
+}
+#link{
+    color: rgb(131, 3, 3);
+    margin-left: 0.5rem;
+}
+#link:hover{
+    cursor: pointer;
+}

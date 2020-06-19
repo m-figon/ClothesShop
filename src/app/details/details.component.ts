@@ -13,6 +13,7 @@ export class DetailsComponent implements OnInit {
   id;
   size = "size";
   users;
+  logedUser;
   constructor(private http: HttpClient, private route: ActivatedRoute, private appService: AppService) { }
 
   ngOnInit(): void {
@@ -23,6 +24,9 @@ export class DetailsComponent implements OnInit {
       this.users = data;
       console.log(this.users);
     })
+    setInterval(()=>{
+      this.logedUser=this.appService.getAccount();
+    },500)
   }
   addToCart() {
     if (this.size !== "size" && this.appService.getAccount()!=="YOUR ACCOUNT") {
