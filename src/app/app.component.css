@@ -76,3 +76,6 @@
     justify-content: center;
     align-items: center;
 }
+#sign-out:hover{
+    cursor: pointer;
+}

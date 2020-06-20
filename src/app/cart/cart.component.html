@@ -16,7 +16,7 @@
                 </div>
             </div>
         </ng-container>
-        <ng-container *ngIf="!cart">
+        <ng-container *ngIf="cart.length===0">
             <div class="one-line-display">
                 <div class="one-line"><h1>Your cart is empty</h1></div>
             </div>
@@ -28,3 +28,8 @@
         <div class="one-line"><h1>To use cart </h1><a routerLink="/account" routerLinkActive="active"><h1 id="link">sign in!</h1></a></div>
     </div>
 </ng-template>
+<ng-container *ngIf="cart.length>0">
+    <div class="one-line-button">
+        <button>MAKE AN ORDER</button>
+    </div>
+</ng-container>

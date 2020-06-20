@@ -1,0 +1,8 @@
+.orders{
+    margin-top: 3rem;
+    display: flex;
+    width:100vw;
+    height:90vh;
+    justify-content: center;
+    align-items: center;
+}

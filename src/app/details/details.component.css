@@ -66,3 +66,7 @@
 #link:hover{
     cursor: pointer;
 }
+#red{
+    color: rgb(131, 3, 3);
+    margin-right: 1rem;
+}

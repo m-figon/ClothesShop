@@ -54,12 +54,11 @@
       </a>
       <div class="options-account">
         <ng-container *ngIf="accountCheck() && ac">
-          <a routerLink="/woman/tops"  routerLinkActive="active"><h1 (click)="closeFunc()">ACCOUNT SETTINGS</h1></a>
-          <a routerLink="/woman/pants" routerLinkActive="active"><h1 (click)="closeFunc()">MY ORDERS</h1></a>
-          <h1 (click)="logout()">SIGN OUT</h1>
+          <a routerLink="/account/settings"  routerLinkActive="active"><h1 (click)="closeFunc()">ACCOUNT SETTINGS</h1></a>
+          <a routerLink="/account/orders" routerLinkActive="active"><h1 (click)="closeFunc()">MY ORDERS</h1></a>
+          <h1 (click)="logout()" id="sign-out">SIGN OUT</h1>
         </ng-container>
       </div>
-      <img src="assets/img/search.png">
       <a routerLink="/cart" routerLinkActive="active">
         <div class="text">
           <h1>CART</h1>

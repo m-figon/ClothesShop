@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { AppService } from './app.service';
 import { DetailsComponent } from './details/details.component';
 import { ChoiceComponent } from './choice/choice.component';
+import { SettingsComponent } from './settings/settings.component';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ChoiceComponent } from './choice/choice.component';
     OfferComponent,
     CartComponent,
     DetailsComponent,
-    ChoiceComponent
+    ChoiceComponent,
+    SettingsComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

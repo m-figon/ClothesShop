@@ -6,7 +6,12 @@
         </div>
         <div class="right-side">
             <h1>{{post[id].name}}</h1>
-            <h1>{{post[id].price}}</h1>
+            <div class="one-line" >
+                <ng-container *ngIf="post[id].discount>0">
+                    <h1 id="red">{{post[id].price-post[id].discount | number:'1.2'}} PLN</h1>
+                </ng-container>
+                <h1 [style.textDecoration]="post[id].discount>0? 'line-through': ''">{{post[id].price}} PLN</h1>
+            </div>
             <select [(ngModel)]="size">
                 <option value="size">Size</option>
                 <option value="S">S</option>
@@ -18,7 +23,11 @@
                 <button (click)="addToCart()">ADD TO CART</button>
             </ng-container>
             <ng-container *ngIf="!logedUser">
-                <div class="one-line"><h1>To add item to cart </h1><a routerLink="/account" routerLinkActive="active"><h1 id="link">sign in!</h1></a></div>
+                <div class="one-line">
+                    <h1>To add item to cart </h1><a routerLink="/account" routerLinkActive="active">
+                        <h1 id="link">sign in!</h1>
+                    </a>
+                </div>
             </ng-container>
 
         </div>
