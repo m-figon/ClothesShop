@@ -13,6 +13,7 @@ import { DetailsComponent } from './details/details.component';
 import { ChoiceComponent } from './choice/choice.component';
 import { SettingsComponent } from './settings/settings.component';
 import { OrdersComponent } from './orders/orders.component';
+import { MakeOrderComponent } from './make-order/make-order.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OrdersComponent } from './orders/orders.component';
     DetailsComponent,
     ChoiceComponent,
     SettingsComponent,
-    OrdersComponent
+    OrdersComponent,
+    MakeOrderComponent
   ],
   imports: [
     BrowserModule,

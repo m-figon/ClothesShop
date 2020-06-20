@@ -44,6 +44,7 @@ export class DetailsComponent implements OnInit {
             surname: item.surname,
             password: item.password,
             cart: tmp,
+            orders: item.orders,
             id: item.id
           }).toPromise().then(data => {
             console.log(data);

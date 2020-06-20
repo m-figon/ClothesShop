@@ -2,24 +2,30 @@
     <ng-container *ngIf="logedUser">
         <div class="settings-display">
             <div class="settings-one-line">
-                <h1>MY ACCOUNT</h1>
+                <h1>CHANGING DATA</h1>
+                <input type="checkbox" [(ngModel)]="changingData">
             </div>
-            <p>Email*</p>
-            <input [(ngModel)]="email">
-            <p>Name*</p>
-            <input [(ngModel)]="name">
-            <p>Surname*</p>
-            <input [(ngModel)]="surname">
+            <ng-container *ngIf="changingData">
+                <p>Email*</p>
+                <input [(ngModel)]="email">
+                <p>Name*</p>
+                <input [(ngModel)]="name">
+                <p>Surname*</p>
+                <input [(ngModel)]="surname">
+            </ng-container>
             <div class="settings-one-line">
                 <h1>CHANGING PASSWORD</h1>
+                <input type="checkbox" [(ngModel)]="changingPassword">
             </div>
-            <p>Current Passowrd*</p>
-            <input [(ngModel)]="currentPassword">
-            <p>New Password*</p>
-            <input [(ngModel)]="newPassword">
-            <p>Confirm New Password*</p>
-            <input [(ngModel)]="confirmPassword">
-            <button>SAVE CHANGES</button>
+            <ng-container *ngIf="changingPassword">
+                <p>Current Passowrd</p>
+                <input [(ngModel)]="currentPassword" type="password">
+                <p>New Password</p>
+                <input [(ngModel)]="newPassword" type="password">
+                <p>Confirm New Password</p>
+                <input [(ngModel)]="confirmPassword" type="password">
+            </ng-container>
+            <button (click)="changeData()">SAVE CHANGES</button>
         </div>
     </ng-container>
 </div>

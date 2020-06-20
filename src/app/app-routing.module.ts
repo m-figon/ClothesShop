@@ -9,12 +9,14 @@ import { DetailsComponent } from './details/details.component';
 import { ChoiceComponent } from './choice/choice.component';
 import { SettingsComponent } from './settings/settings.component';
 import { OrdersComponent } from './orders/orders.component';
+import { MakeOrderComponent } from './make-order/make-order.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'account', component: AccountComponent },
   { path: 'account/settings', component: SettingsComponent },
   { path: 'account/orders', component: OrdersComponent },
+  { path: 'makeOrder', component: MakeOrderComponent },
   { path: 'cart', component: CartComponent },
   { path: ':type', component: OfferComponent },
   { path: ':type/:details', component: ChoiceComponent },

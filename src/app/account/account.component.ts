@@ -118,6 +118,7 @@ export class AccountComponent implements OnInit {
         surname: item.surname,
         password: this.resetPassword,
         cart: item.cart,
+        orders: item.orders,
         id: item.id
       }).toPromise().then(data => {
         console.log(data);
@@ -162,7 +163,8 @@ export class AccountComponent implements OnInit {
         name: this.Name,
         surname: this.Surname,
         password: this.Password,
-        cart: []
+        cart: [],
+        orders: []
       }).toPromise().then(data => {
         console.log(data);
         this.emptyEmail = false;

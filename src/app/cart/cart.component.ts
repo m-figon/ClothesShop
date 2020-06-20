@@ -14,15 +14,16 @@ export class CartComponent implements OnInit {
   users;
   id;
   logedUser;
-  cartInit(){
+  newOrder;
+  cartInit() {
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/users').subscribe(data => {
       //console.log(data);
       this.users = data;
-      this.logedUser=this.appService.getAccount();
+      this.logedUser = this.appService.getAccount();
       console.log(this.users);
       for (let item of this.users) {
         if (item.email === this.appService.getAccount()) {
-          this.cart= item.cart.slice();
+          this.cart = item.cart.slice();
           console.log(this.cart);
         }
       }
@@ -31,27 +32,51 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cartInit();
   }
-  deleteItem(id){
+  deleteItem(id) {
     let tmp;
-      for (let item of this.users) {
-        if (item.email === this.appService.getAccount()) {
-          tmp = item.cart.slice();
-          tmp.splice(id, 1);
-          console.log(tmp);
-          this.http.put<any>("https://rocky-citadel-32862.herokuapp.com/ClothesShop/users/" + item.id, {
-            email: item.email,
-            name: item.name,
-            surname: item.surname,
-            password: item.password,
-            cart: tmp,
-            id: item.id
-          }).toPromise().then(data => {
-            console.log(data);
-            alert('item deleted');
-            this.cartInit();
-          })
-        }
+    for (let item of this.users) {
+      if (item.email === this.appService.getAccount()) {
+        tmp = item.cart.slice();
+        tmp.splice(id, 1);
+        console.log(tmp);
+        this.http.put<any>("https://rocky-citadel-32862.herokuapp.com/ClothesShop/users/" + item.id, {
+          email: item.email,
+          name: item.name,
+          surname: item.surname,
+          password: item.password,
+          cart: tmp,
+          orders: item.orders,
+          id: item.id
+        }).toPromise().then(data => {
+          console.log(data);
+          alert('item deleted');
+          this.cartInit();
+        })
       }
+    }
   }
-
+  /*
+  createOrder() {
+    for (let item of this.users) {
+      if (item.email === this.appService.getAccount()) {
+        this.newOrder=item.cart.slice();
+        for(let item of this.newOrder){
+          item["date"] = new Date();
+        }
+        this.http.put<any>("https://rocky-citadel-32862.herokuapp.com/ClothesShop/users/" + item.id, {
+          email: item.email,
+          name: item.name,
+          surname: item.surname,
+          password: item.password,
+          cart: [],
+          orders: this.newOrder,
+          id: item.id
+        }).toPromise().then(data => {
+          console.log(data);
+          alert('user password changed');
+        })
+      }
+    }
+  }
+*/
 }

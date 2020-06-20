@@ -30,6 +30,6 @@
 </ng-template>
 <ng-container *ngIf="cart.length>0">
     <div class="one-line-button">
-        <button>MAKE AN ORDER</button>
+        <a routerLink="/makeOrder" routerLinkActive="active" [state]="this.cart"><button >MAKE AN ORDER</button></a>
     </div>
 </ng-container>
