@@ -55,28 +55,4 @@ export class CartComponent implements OnInit {
       }
     }
   }
-  /*
-  createOrder() {
-    for (let item of this.users) {
-      if (item.email === this.appService.getAccount()) {
-        this.newOrder=item.cart.slice();
-        for(let item of this.newOrder){
-          item["date"] = new Date();
-        }
-        this.http.put<any>("https://rocky-citadel-32862.herokuapp.com/ClothesShop/users/" + item.id, {
-          email: item.email,
-          name: item.name,
-          surname: item.surname,
-          password: item.password,
-          cart: [],
-          orders: this.newOrder,
-          id: item.id
-        }).toPromise().then(data => {
-          console.log(data);
-          alert('user password changed');
-        })
-      }
-    }
-  }
-*/
 }

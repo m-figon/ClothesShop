@@ -1,19 +1,52 @@
+<ng-container *ngIf="!beginning">
+    <div class="make-order">
+        <div class="make-order-display">
+            <p>Email*</p>
+            <input [(ngModel)]="email">
+            <p>Name*</p>
+            <input [(ngModel)]="name">
+            <p>Surname*</p>
+            <input [(ngModel)]="surname">
+            <p>City*</p>
+            <input [(ngModel)]="city">
+            <p>Post code*</p>
+            <input [(ngModel)]="postCode">
+            <p>Street*</p>
+            <input [(ngModel)]="street">
+            <button (click)="changeStep()">NEXT STEP</button>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="beginning">
 <div class="make-order">
     <div class="make-order-display">
-        <p>Email*</p>
-        <input value="email">
-        <p>Name*</p>
-        <input value="name">
-        <p>Surname*</p>
-        <input value="surname">
-        <p>City*</p>
-        <input value="city">
-        <p>Post code*</p>
-        <input value="post-code">
-        <p>Street*</p>
-        <input value="street">
-        <button>FINISH ORDER</button>
+        <div class="summary">
+            <ng-container *ngFor="let item of cart">
+                <div class="item-display">
+                    <img src="{{item.img}}">
+                    <h1>{{item.name}}</h1>
+                    <h1>{{item.price}}</h1>
+                </div>
+            </ng-container>
+            <div class="item-display">
+                <h1>Email</h1>
+                <h1>Name</h1>
+                <h1>Surname</h1>
+                <h1>City</h1>
+                <h1>Post Code</h1>
+                <h1>Street</h1>
+            </div>
+            <div class="item-display">
+                <h1>{{email}}</h1>
+                <h1>{{name}}</h1>
+                <h1>{{surname}}</h1>
+                <h1>{{city}}</h1>
+                <h1>{{postCode}}</h1>
+                <h1>{{street}}</h1>
+            </div>
+        </div>
+        <button (click)="changeStep()">GO BACK</button>
+        <button (click)="createOrder()">FINISH</button>
     </div>
-
-
 </div>
+</ng-container>
