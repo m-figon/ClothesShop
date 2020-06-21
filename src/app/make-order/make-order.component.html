@@ -18,35 +18,101 @@
     </div>
 </ng-container>
 <ng-container *ngIf="beginning">
-<div class="make-order">
-    <div class="make-order-display">
-        <div class="summary">
-            <ng-container *ngFor="let item of cart">
-                <div class="item-display">
-                    <img src="{{item.img}}">
-                    <h1>{{item.name}}</h1>
-                    <h1>{{item.price}}</h1>
+    <div class="make-order">
+        <div class="make-order-display">
+            <div class="summary">
+                <div class="item-display" id="header">
+                    <div class="item">
+                        <h1>Number</h1>
+                    </div>
+                    <div class="item">
+                        <h1>Picture</h1>
+                    </div>
+                    <div class="longer-item">
+                        <h1>Name</h1>
+                    </div>
+                    <div class="item">
+                        <h1>Original Price</h1>
+                    </div>
+                    <div class="item">
+                        <h1>Price</h1>
+                    </div>
+                    <div class="item">
+                        <h1>Size</h1>
+                    </div>
                 </div>
-            </ng-container>
-            <div class="item-display">
-                <h1>Email</h1>
-                <h1>Name</h1>
-                <h1>Surname</h1>
-                <h1>City</h1>
-                <h1>Post Code</h1>
-                <h1>Street</h1>
+                <ng-container *ngFor="let item of cart; index as i">
+                    <div class="item-display" [style.borderBottom]="i+1===cart.length ? '1.0px solid #7c7c7c': ''">
+                        <div class="item">
+                            <h1>{{i+1}}</h1>
+                        </div>
+                        <div class="item">
+                            <img src="{{item.img}}">
+                        </div>
+                        <div class="longer-item">
+                            <h1>{{item.name}}</h1>
+                        </div>
+                        <div class="item">
+                            <h1>{{item.price}} PLN</h1>
+                        </div>
+                        <div class="item">
+                            <h1>{{item.price-item.discount | number:'1.2'}} PLN</h1>
+                        </div>
+                        <div class="item">
+                            <h1>{{item.size}}</h1>
+                        </div>
+                    </div>
+                </ng-container>
+                <div class="item-display" id="header">
+                    <div class="item">
+                        <h1>Email</h1>
+                    </div>
+                    <div class="item">
+                        <h1>Name</h1>
+                    </div>
+                    <div class="item">
+                        <h1>Surname</h1>
+                    </div>
+                    <div class="item">
+                        <h1>City</h1>
+                    </div>
+                    <div class="item">
+                        <h1>Post Code</h1>
+                    </div>
+                    <div class="item">
+                        <h1>Street</h1>
+                    </div>
+                </div>
+                <div class="item-display" id="smaller">
+                    <div class="item">
+                        <h1>{{email}}</h1>
+                    </div>
+                    <div class="item">
+                        <h1>{{name}}</h1>
+                    </div>
+                    <div class="item">
+                        <h1>{{surname}}</h1>
+                    </div>
+                    <div class="item">
+                        <h1>{{city}}</h1>
+                    </div>
+                    <div class="item">
+                        <h1>{{postCode}}</h1>
+                    </div>
+                    <div class="item">
+                        <h1>{{street}}</h1>
+                    </div>
+                </div>
             </div>
-            <div class="item-display">
-                <h1>{{email}}</h1>
-                <h1>{{name}}</h1>
-                <h1>{{surname}}</h1>
-                <h1>{{city}}</h1>
-                <h1>{{postCode}}</h1>
-                <h1>{{street}}</h1>
+            <div class="button-display">
+                <div class="left-button">
+                <button (click)="changeStep()">GO BACK</button>
+                </div>
+                <div class="right-button">
+                <button (click)="createOrder()">FINISH</button>
+                </div>
             </div>
+
         </div>
-        <button (click)="changeStep()">GO BACK</button>
-        <button (click)="createOrder()">FINISH</button>
     </div>
-</div>
 </ng-container>
