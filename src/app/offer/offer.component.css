@@ -23,6 +23,12 @@
     width:30rem;
     background-color: rgba(0, 0, 0, 0.377);
 }
+.cloth-text{
+    width: 13rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 .ad-text h1{
     font-size: 5rem;
     color:white;

@@ -1,6 +1,6 @@
 <ng-container *ngIf="logedUser; else other_content">
     <div class="cart">
-        <ng-container *ngIf="cart">
+        <ng-container *ngIf="cart.length>0">
             <div class="products">
                 <div class="item-display" id="header">
                     <div class="item">
@@ -67,7 +67,7 @@
                         PRICE OF PRODUCTS
                     </div>
                     <div class="right">
-                        {{price}} PLN
+                        {{price | number:'1.2'}} PLN
                     </div>
                 </div>
                 <div class="summary-line">
@@ -83,7 +83,7 @@
                         ALL COSTS
                     </div>
                     <div class="right">
-                        {{price}} PLN
+                        {{price | number:'1.2'}} PLN
                     </div>
                 </div>
                 <a routerLink="/makeOrder" routerLinkActive="active" [state]="this.cart">

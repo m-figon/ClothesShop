@@ -1,24 +1,24 @@
 <div class="offer">
-    <img src="{{ad}}">
-    <div class="ad-text">
-        <h1>{{type | uppercase}}</h1>
-    </div>
     <div class="offers">
-    <ng-container *ngFor="let item of content">
-        <ng-container *ngFor="let elem of item.content">
-            <ng-container *ngIf="elem.discount>0">
-                <a routerLink="/{{type}}/{{item.type}}/{{elem.id}}" routerLinkActive="active" [state]="item.content">
-                    <div class="single-offer">
-                        <img src="{{elem.img}}">
-                        <div class="one-line">
-                                <h1 id="red">{{elem.price-elem.discount | number:'1.2'}} PLN</h1>
-                                <h1 [style.textDecoration]="elem.discount>0? 'line-through': ''">{{elem.price}} PLN</h1>
+        <ng-container *ngFor="let item of content">
+            <ng-container *ngFor="let elem of item.content">
+                <ng-container *ngIf="elem.discount>0">
+                    <a routerLink="/{{type}}/{{item.type}}/{{elem.id}}" routerLinkActive="active"
+                        [state]="item.content">
+                        <div class="single-offer">
+                            <img src="{{elem.img}}">
+                            <div class="cloth-text">
+                                <h1>{{elem.name}}</h1>
+                                <div class="one-line">
+                                    <h1 id="red">{{elem.price-elem.discount | number:'1.2'}} PLN</h1>
+                                    <h1 [style.textDecoration]="elem.discount>0? 'line-through': ''">{{elem.price}} PLN
+                                    </h1>
+                                </div>
+                            </div>
                         </div>
-                        <h1>{{elem.name}}</h1>
-                    </div>
-                </a>
+                    </a>
+                </ng-container>
             </ng-container>
         </ng-container>
-    </ng-container>
     </div>
 </div>

@@ -14,11 +14,27 @@ export class DetailsComponent implements OnInit {
   size = "size";
   users;
   logedUser;
+  type;
+  details;
   constructor(private http: HttpClient, private route: ActivatedRoute, private appService: AppService) { }
 
   ngOnInit(): void {
-    this.post = history.state;
+    this.type = (this.route.snapshot.paramMap.get('type'));
+    this.details = (this.route.snapshot.paramMap.get('details'));
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/'+this.type).subscribe(data => {
+      //console.log(data);
+      if(this.details==="tops"){
+        this.post = data[0].content;
+      }
+      else if(this.details==="pants"){
+        this.post = data[1].content;
+      }
+      else if(this.details==="boots"){
+        this.post = data[2].content;
+      }
+      console.log(this.post);
+    })
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/users').subscribe(data => {
       //console.log(data);
       this.users = data;

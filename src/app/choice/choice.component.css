@@ -1,10 +1,11 @@
 .choice{
-    margin-top:3rem;
+    margin-top:5rem;
     width:100vw;
-    height:calc(100vh - 3rem);
+    height:calc(100vh - 5rem);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
 }
 .clothes{
     display: grid;
@@ -12,6 +13,15 @@
 }
 .one-line{
     display: flex;
+}
+.line{
+    width:61rem;
+    display: flex;
+    justify-content: flex-start;
+}
+.line h1{
+    font-size: 1.5rem;
+    margin-bottom: 0;
 }
 .cloth{
     display: flex;
@@ -27,6 +37,12 @@
     height:15rem;
     margin-bottom: 0.5rem;
     border: 1px solid rgb(228, 228, 228);
+}
+.cloth-text{
+    width: 13rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 #red{
     color: rgb(131, 3, 3);

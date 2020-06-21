@@ -1,20 +1,26 @@
 <div class="choice">
     <ng-container *ngIf="content">
-        <div class="clothes" *ngFor="let item of content">
-            <a routerLink="/{{gender}}/{{type}}/{{item.id}}" routerLinkActive="active" [state]="content">
-                <div class="cloth">
-                    <img src="{{item.img}}">
-                    <div class="one-line">
-                        <ng-container *ngIf="item.discount>0">
-                            <h1 id="red">{{item.price-item.discount | number:'1.2'}} PLN</h1>
-                        </ng-container>
-                        <h1 [style.textDecoration]="item.discount>0? 'line-through': ''">{{item.price}} PLN</h1>
+        <div class="line">
+            <h1>{{type}}</h1>
+        </div>
+        <div class="clothes">
+            <ng-container *ngFor="let item of content">
+                <a routerLink="/{{gender}}/{{type}}/{{item.id}}" routerLinkActive="active">
+                    <div class="cloth">
+                        <img src="{{item.img}}">
+                        <div class="cloth-text">
+                            <h1>{{item.name}}</h1>
+                            <div class="one-line">
+                                <ng-container *ngIf="item.discount>0">
+                                    <h1 id="red">{{item.price-item.discount | number:'1.2'}} PLN</h1>
+                                </ng-container>
+                                <h1 [style.textDecoration]="item.discount>0? 'line-through': ''">{{item.price}} PLN</h1>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <h1>{{item.name}}</h1>
-                </div>
-            </a>
-
+                </a>
+            </ng-container>
         </div>
     </ng-container>
 
