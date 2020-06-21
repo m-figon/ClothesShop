@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
   id;
   logedUser;
   newOrder;
+  price=0;
   cartInit() {
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/users').subscribe(data => {
       //console.log(data);
@@ -26,6 +27,9 @@ export class CartComponent implements OnInit {
           this.cart = item.cart.slice();
           console.log(this.cart);
         }
+      }
+      for(let item of this.cart){
+        this.price+=(item.price-item.discount);
       }
     })
   }

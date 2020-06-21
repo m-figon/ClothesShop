@@ -1,7 +1,7 @@
 .account{
     margin-top:3rem;
     width:100vw;
-    height:90vh;
+    height:calc(100vh - 3rem);
     display: flex;
 }
 .password{

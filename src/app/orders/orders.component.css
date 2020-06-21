@@ -1,8 +1,69 @@
-.orders{
+.make-order{
     margin-top: 3rem;
     display: flex;
     width:100vw;
-    height:90vh;
+    height:calc(100vh - 3rem);
     justify-content: center;
     align-items: center;
+    background-color: rgb(236, 236, 236);
+}
+.make-order-display{
+    width:60rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.item-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:60rem;
+    height:5rem;
+    background-color: white;
+    border: 1.0px solid #7c7c7c;
+    border-bottom: 0;
+}
+.item, .longer-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:6rem;
+    height:5rem;
+}
+#header{
+    background-color: #525151;
+    height:3rem;
+}
+#header h1{
+    color: white;
+}
+#smaller{
+    height:3rem;
+}
+.longer-item{
+    width:12rem;
+}
+.left-button, .right-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    height:100%;
+}
+.left-button{
+    justify-content: flex-start;
+}
+.right-button{
+    justify-content: flex-end;
+}
+.item-display img{
+    width: 3rem;
+    height:4rem;
+    margin-right: 1rem;
+    border: 1px solid rgb(228, 228, 228);
+}
+.item-display h1{
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
 }

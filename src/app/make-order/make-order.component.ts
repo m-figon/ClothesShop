@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AppService } from '../app.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-make-order',
@@ -26,7 +27,6 @@ export class MakeOrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/users').subscribe(data => {
-      //console.log(data);
       this.users = data;
       this.logedUser = this.appService.getAccount();
       for(let item of this.users){
@@ -38,7 +38,8 @@ export class MakeOrderComponent implements OnInit {
         }
       }
       console.log(this.users[this.id]);
-    })
+    })      //console.log(data);
+
     this.tmp=history.state;
     console.log(this.tmp);
     for(let item in this.tmp){
@@ -48,7 +49,7 @@ export class MakeOrderComponent implements OnInit {
       this.cart.push(this.tmp[i]);
     }
     for(let item of this.cart){
-     item["date"] = new Date();
+     item["date"] = moment().format('LL');
     }
     console.log(this.cart);
   }

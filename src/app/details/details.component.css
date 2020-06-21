@@ -1,7 +1,7 @@
 .details {
     margin-top: 3rem;
     width: 100vw;
-    height: 88vh;
+    height:calc(100vh - 3rem);
     display: flex;
     justify-content: center;
     align-items: center;
