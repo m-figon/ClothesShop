@@ -1,5 +1,19 @@
-<div class="offer">
-    <div class="offers" *ngIf="loadingFinished">
+<div class="offer" *ngIf="loadingFinished">
+    <div class="offer-menu">
+        <div class="single-line">
+            <div class="item-line">
+                <a routerLink="/{{type}}/tops" routerLinkActive="active"><h1>Tops</h1></a>
+    
+            </div>
+            <div class="item-line">
+                <a routerLink="/{{type}}/pants" routerLinkActive="active"><h1>Pants</h1></a>
+            </div>
+            <div class="item-line">
+                <a routerLink="/{{type}}/sweatshirts" routerLinkActive="active"><h1>Sweatshirts</h1></a>
+            </div>
+        </div>
+    </div>
+    <div class="offers" >
         <ng-container *ngFor="let item of content">
             <ng-container *ngFor="let elem of item.content">
                 <ng-container *ngIf="elem.discount>0">
@@ -21,9 +35,9 @@
             </ng-container>
         </ng-container>
     </div>
+</div>
     <ng-container *ngIf="!loadingFinished">
         <div class="loading-display">
             <img src="assets/img/load.gif">
         </div>
     </ng-container>
-</div>

@@ -15,22 +15,27 @@ export class ChoiceComponent implements OnInit,AfterViewInit {
   man;
   loadingFinished;
   content;
+  lastType;;
   ngOnInit(): void {
     this.gender = (this.route.snapshot.paramMap.get('type'));
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/'+this.gender).subscribe(data => {
       //console.log(data);
       this.man = data;
       console.log(this.man);
+    })
+    setInterval(()=>{
+      this.lastType=this.type;
       this.type = (this.route.snapshot.paramMap.get('details'));
       console.log(this.type);
-      for(let item of this.man){
-        if(item.type===this.type){
-          this.content=item.content.slice();
-          console.log(this.content);
+      if(this.lastType!==this.type){
+        for(let item of this.man){
+          if(item.type===this.type){
+            this.content=item.content.slice();
+            console.log(this.content);
+          }
         }
       }
-
-    })
+    },500)
   }
   ngAfterViewInit() {
     this.loadingFinished=true;

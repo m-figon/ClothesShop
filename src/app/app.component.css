@@ -18,35 +18,38 @@
     align-items: center;
     width:auto;
     height:100%;
-    border-top: 3px solid rgba(0, 0, 0, 0);
+    border-top: 1.5px solid rgba(0, 0, 0, 0);
     margin-left: 1rem;
     margin-right: 1rem;
 }
-.options-woman,
-.options-man,
 .options-account{
     position: relative;
-    top:8rem;
-    left:-8rem;
+    top:2.6rem;
+    left:-12rem;
     padding-left: 2rem;
     padding-right: 2rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    width:5rem;
+    width: 5rem;
     background-color: white;
 }
-.nav-bar h1,
-.options-woman h1,
-.options-man h1,
-.options-account{
+.nav-bar h1{
     font-weight: 300;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     letter-spacing: 1px;
 }
+.options-account h1{
+    font-weight: 300;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+.options-account h1:hover{
+    text-decoration: underline;
+}
 .nav-bar .text:hover{
-    border-top: 3px solid black;
+    border-top: 1.5px solid black;
 }
 .nav-bar .right img{
     width:2rem;

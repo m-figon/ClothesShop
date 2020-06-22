@@ -20,42 +20,34 @@
     <div class="middle">
       <div class="left">
         <a routerLink="/woman" routerLinkActive="active">
-          <div (mouseenter)="hoverFunc('woman')" class="text">
+          <div class="text">
             <h1>WOMAN</h1>
           </div>
         </a>
-        <div class="options-woman">
-          <ng-container *ngIf="woman">
-            <a routerLink="/woman/tops"  routerLinkActive="active"><h1 (click)="closeFunc()">Tops</h1></a>
-            <a routerLink="/woman/pants" routerLinkActive="active"><h1 (click)="closeFunc()">Pants</h1></a>
-            <a routerLink="/woman/sweatshirts" routerLinkActive="active"><h1 (click)="closeFunc()">Sweatshirts</h1></a>
-          </ng-container>
-        </div>
         <a routerLink="/man" routerLinkActive="active">
-          <div (mouseenter)="hoverFunc('man')" class="text">
+          <div class="text">
             <h1>MAN</h1>
           </div>
         </a>
-        <div class="options-man">
-          <ng-container *ngIf="man">
-            <a routerLink="/man/tops" routerLinkActive="active"><h1 (click)="closeFunc()">Tops</h1></a>
-            <a routerLink="/man/pants" routerLinkActive="active"><h1 (click)="closeFunc()">Pants</h1></a>
-            <a routerLink="/man/sweatshirts" routerLinkActive="active"><h1 (click)="closeFunc()">Sweatshirts</h1></a>
-          </ng-container>
-        </div>
-
       </div>
     </div>
     <div class="right">
-      <a routerLink="/account" routerLinkActive="active">
-        <div (mouseenter)="hoverFunc('ac')" class="text">
-          <h1>{{account}}</h1><img src="assets/img/user.png">
-        </div>
-      </a>
+      <ng-container *ngIf="!accountCheck()">
+        <a routerLink="/account" routerLinkActive="active">
+          <div (mouseenter)="hoverFunc('ac')" class="text">
+            <h1>YOUR ACCOUNT</h1><img src="assets/img/user.png">
+          </div>
+        </a>
+      </ng-container>
+      <ng-container *ngIf="accountCheck()">
+        <a routerLink="/account/settings" routerLinkActive="active">
+          <div (mouseenter)="hoverFunc('ac')" class="text">
+            <h1>{{account}}</h1><img src="assets/img/user.png">
+          </div>
+        </a>
+      </ng-container>
       <div class="options-account">
         <ng-container *ngIf="accountCheck() && ac">
-          <a routerLink="/account/settings"  routerLinkActive="active"><h1 (click)="closeFunc()">ACCOUNT SETTINGS</h1></a>
-          <a routerLink="/account/orders" routerLinkActive="active"><h1 (click)="closeFunc()">MY ORDERS</h1></a>
           <h1 (click)="logout()" id="sign-out">SIGN OUT</h1>
         </ng-container>
       </div>

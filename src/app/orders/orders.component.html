@@ -1,4 +1,16 @@
 <div class="make-order" *ngIf="loadingFinished">
+    <div class="single-line">
+        <div class="item-line">
+            <a routerLink="/account/settings" routerLinkActive="active">
+                <h1>Settings</h1>
+            </a>
+        </div>
+        <div class="item-line">
+            <a routerLink="/account/orders" routerLinkActive="active">
+                <h1 id="selected">Orders</h1>
+            </a>
+        </div>
+    </div>
     <div class="make-order-display" *ngIf="users[id].orders.length>0">
         <div class="summary">
             <div class="item-display" id="header">

@@ -1,7 +1,17 @@
 <div class="choice">
     <ng-container *ngIf="content && loadingFinished">
-        <div class="line">
-            <h1>{{type}}</h1>
+        <div class="offer-menu">
+            <div class="single-line">
+                <div class="item-line">
+                    <a routerLink="/{{gender}}/tops" routerLinkActive="active"><h1 [style.color]="type==='tops' ? 'gray': ''">Tops</h1></a>
+                </div>
+                <div class="item-line">
+                    <a routerLink="/{{gender}}/pants" routerLinkActive="active"><h1 [style.color]="type==='pants' ? 'gray': ''">Pants</h1></a>
+                </div>
+                <div class="item-line">
+                    <a routerLink="/{{gender}}/sweatshirts" routerLinkActive="active"><h1 [style.color]="type==='sweatshirts' ? 'gray': ''">Sweatshirts</h1></a>
+                </div>
+            </div>
         </div>
         <div class="clothes">
             <ng-container *ngFor="let item of content">
