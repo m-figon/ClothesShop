@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AppService } from '../app.service';
@@ -9,7 +9,7 @@ import * as moment from 'moment';
   templateUrl: './make-order.component.html',
   styleUrls: ['./make-order.component.css']
 })
-export class MakeOrderComponent implements OnInit {
+export class MakeOrderComponent implements OnInit,AfterViewInit {
   tmp;
   number=-1;
   cart=[];
@@ -23,6 +23,7 @@ export class MakeOrderComponent implements OnInit {
   users;
   logedUser;
   id;
+  loadingFinished;
   constructor(private route: ActivatedRoute, private http: HttpClient, private appService: AppService) { }
 
   ngOnInit(): void {
@@ -52,6 +53,9 @@ export class MakeOrderComponent implements OnInit {
      item["date"] = moment().format('LL');
     }
     console.log(this.cart);
+  }
+  ngAfterViewInit() {
+    this.loadingFinished=true;
   }
   changeStep(){
     if(!this.beginning){

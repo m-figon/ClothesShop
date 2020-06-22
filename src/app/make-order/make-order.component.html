@@ -1,3 +1,4 @@
+<ng-container *ngIf="loadingFinished">
 <ng-container *ngIf="!beginning">
     <div class="make-order">
         <div class="make-order-display">
@@ -114,5 +115,11 @@
             </div>
 
         </div>
+    </div>
+</ng-container>
+</ng-container>
+<ng-container *ngIf="!loadingFinished">
+    <div class="loading-display">
+        <img src="assets/img/load.gif">
     </div>
 </ng-container>

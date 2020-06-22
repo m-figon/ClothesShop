@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { HttpClient } from '@angular/common/http';
 import { IfStmt } from '@angular/compiler';
@@ -8,7 +8,7 @@ import { IfStmt } from '@angular/compiler';
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css']
 })
-export class SettingsComponent implements OnInit {
+export class SettingsComponent implements OnInit,AfterViewInit {
 
   constructor(private http: HttpClient, private appService: AppService) { }
   users;
@@ -22,6 +22,7 @@ export class SettingsComponent implements OnInit {
   confirmPassword="";
   changingData=true;
   changingPassword=false;
+  loadingFinished;
   ngOnInit(): void {
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/users').subscribe(data => {
       //console.log(data);
@@ -38,6 +39,9 @@ export class SettingsComponent implements OnInit {
         }
       }
     })
+  }
+  ngAfterViewInit() {
+    this.loadingFinished=true;
   }
   changeData(){
     if(!this.changingPassword && this.changeData){

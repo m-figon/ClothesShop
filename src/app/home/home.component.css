@@ -62,3 +62,18 @@
         margin-left: 0;
     }
   }
+  .loading-display{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading-display img{
+    height: 1rem;
+    width: 1rem;
+}

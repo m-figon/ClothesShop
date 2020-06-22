@@ -1,4 +1,4 @@
-<div class="settings">
+<div class="settings" *ngIf="loadingFinished">
     <ng-container *ngIf="logedUser">
         <div class="settings-display">
             <div class="settings-one-line">
@@ -29,3 +29,8 @@
         </div>
     </ng-container>
 </div>
+<ng-container *ngIf="!loadingFinished">
+    <div class="loading-display">
+        <img src="assets/img/load.gif">
+    </div>
+</ng-container>

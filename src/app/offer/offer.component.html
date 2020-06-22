@@ -1,5 +1,5 @@
 <div class="offer">
-    <div class="offers">
+    <div class="offers" *ngIf="loadingFinished">
         <ng-container *ngFor="let item of content">
             <ng-container *ngFor="let elem of item.content">
                 <ng-container *ngIf="elem.discount>0">
@@ -21,4 +21,9 @@
             </ng-container>
         </ng-container>
     </div>
+    <ng-container *ngIf="!loadingFinished">
+        <div class="loading-display">
+            <img src="assets/img/load.gif">
+        </div>
+    </ng-container>
 </div>

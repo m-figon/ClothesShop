@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -7,12 +7,13 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './offer.component.html',
   styleUrls: ['./offer.component.css']
 })
-export class OfferComponent implements OnInit {
+export class OfferComponent implements OnInit,AfterViewInit {
   type;
   lastType;
   ad;
   content;
   change;
+  loadingFinished;
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -39,6 +40,9 @@ export class OfferComponent implements OnInit {
       }
     }, 500)
 
+  }
+  ngAfterViewInit() {
+    this.loadingFinished=true;
   }
 
 }

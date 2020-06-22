@@ -1,4 +1,4 @@
-<div class="account">
+<div class="account" *ngIf="loadingFinished">
     <ng-container *ngIf="login">
 
         <div class="login">
@@ -57,3 +57,8 @@
     </ng-container>
 
 </div>
+<ng-container *ngIf="!loadingFinished">
+    <div class="loading-display">
+        <img src="assets/img/load.gif">
+    </div>
+</ng-container>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppService } from '../app.service';
 
@@ -7,7 +7,7 @@ import { AppService } from '../app.service';
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css']
 })
-export class AccountComponent implements OnInit {
+export class AccountComponent implements OnInit,AfterViewInit {
   Email = "Email";
   Password = "Password";
   Name = "Name";
@@ -24,6 +24,7 @@ export class AccountComponent implements OnInit {
   emptySurname;
   wrongData;
   tooltip;
+  loadingFinished;
   constructor(private http: HttpClient, private appService: AppService) { }
   changeView() {
     this.login = !this.login;
@@ -37,6 +38,9 @@ export class AccountComponent implements OnInit {
     this.Password = "Password";
     this.Name = "Name";
     this.Surname = "Surname";
+  }
+  ngAfterViewInit() {
+    this.loadingFinished=true;
   }
   focus(value1) {
     //console.log(value1);

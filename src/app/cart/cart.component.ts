@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { HttpClient } from '@angular/common/http';
 
@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit,AfterViewInit {
 
   constructor(private http: HttpClient, private appService: AppService) { }
   cart;
@@ -16,6 +16,7 @@ export class CartComponent implements OnInit {
   logedUser;
   newOrder;
   price=0;
+  loadingFinished;
   cartInit() {
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/users').subscribe(data => {
       //console.log(data);
@@ -35,6 +36,9 @@ export class CartComponent implements OnInit {
   }
   ngOnInit(): void {
     this.cartInit();
+  }
+  ngAfterViewInit() {
+    this.loadingFinished=true;
   }
   deleteItem(id) {
     let tmp;

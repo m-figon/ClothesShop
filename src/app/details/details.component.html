@@ -1,4 +1,4 @@
-<div class="details">
+<div class="details" *ngIf="loadingFinished">
     <div class="detail">
         <div class="left-side">
             <img src="{{post[id].img}}">
@@ -35,3 +35,8 @@
     </div>
 
 </div>
+<ng-container *ngIf="!loadingFinished">
+    <div class="loading-display">
+        <img src="assets/img/load.gif">
+    </div>
+</ng-container>

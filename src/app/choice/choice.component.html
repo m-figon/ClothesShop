@@ -1,5 +1,5 @@
 <div class="choice">
-    <ng-container *ngIf="content">
+    <ng-container *ngIf="content && loadingFinished">
         <div class="line">
             <h1>{{type}}</h1>
         </div>
@@ -23,5 +23,9 @@
             </ng-container>
         </div>
     </ng-container>
-
+    <ng-container *ngIf="!loadingFinished">
+        <div class="loading-display">
+            <img src="assets/img/load.gif">
+        </div>
+    </ng-container>
 </div>

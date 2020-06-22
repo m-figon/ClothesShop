@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppService } from '../app.service';
 
@@ -7,11 +7,12 @@ import { AppService } from '../app.service';
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css']
 })
-export class OrdersComponent implements OnInit {
+export class OrdersComponent implements OnInit,AfterViewInit {
 
   constructor(private http: HttpClient, private appService: AppService) { }
   users;
   id;
+  loadingFinished;
   ngOnInit(): void {
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/users').subscribe(data => {
       this.users = data;
@@ -22,6 +23,9 @@ export class OrdersComponent implements OnInit {
       }
       console.log(this.users[this.id].orders);
     })
+  }
+  ngAfterViewInit() {
+    this.loadingFinished=true;
   }
 
 }

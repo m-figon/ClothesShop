@@ -1,4 +1,4 @@
-<div class="home">
+<div class="home" *ngIf="loadingFinished">
     <div class="imgs">
         <img src="assets/img/home1.jpg">
         <img src="assets/img/home2.jpg">
@@ -8,3 +8,8 @@
         <h1>SUMMER OFFER</h1>
     </div>
 </div>
+<ng-container *ngIf="!loadingFinished">
+    <div class="loading-display">
+        <img src="assets/img/load.gif">
+    </div>
+</ng-container>

@@ -1,5 +1,5 @@
-<div class="make-order">
-    <div class="make-order-display">
+<div class="make-order" *ngIf="loadingFinished">
+    <div class="make-order-display" *ngIf="users[id].orders.length>0">
         <div class="summary">
             <div class="item-display" id="header">
                 <div class="item">
@@ -34,7 +34,8 @@
                 </div>
             </div>
             <ng-container *ngFor="let item of users[id].orders; index as i">
-                <div class="item-display" [style.borderBottom]="i+1===users[id].orders.length ? '1.0px solid #7c7c7c': ''">
+                <div class="item-display"
+                    [style.borderBottom]="i+1===users[id].orders.length ? '1.0px solid #7c7c7c': ''">
                     <div class="item">
                         <h1>{{i+1}}</h1>
                     </div>
@@ -69,4 +70,12 @@
             </ng-container>
         </div>
     </div>
+    <ng-container *ngIf="users[id].orders.length===0">
+        <h1>No orders made</h1>
+    </ng-container>
 </div>
+<ng-container *ngIf="!loadingFinished">
+    <div class="loading-display">
+        <img src="assets/img/load.gif">
+    </div>
+</ng-container>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppService } from '../app.service';
 import { HttpClient } from '@angular/common/http';
@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent implements OnInit {
+export class DetailsComponent implements OnInit,AfterViewInit {
   post;
   id;
   size = "size";
@@ -16,6 +16,7 @@ export class DetailsComponent implements OnInit {
   logedUser;
   type;
   details;
+  loadingFinished;
   constructor(private http: HttpClient, private route: ActivatedRoute, private appService: AppService) { }
 
   ngOnInit(): void {
@@ -43,6 +44,9 @@ export class DetailsComponent implements OnInit {
     setInterval(()=>{
       this.logedUser=this.appService.getAccount();
     },500)
+  }
+  ngAfterViewInit() {
+    this.loadingFinished=true;
   }
   addToCart() {
     if (this.size !== "size" && this.appService.getAccount()!=="YOUR ACCOUNT") {
