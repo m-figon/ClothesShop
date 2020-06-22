@@ -45,6 +45,13 @@ export class DetailsComponent implements OnInit,AfterViewInit {
       this.logedUser=this.appService.getAccount();
     },500)
   }
+  accountCheck(){
+    if(this.logedUser==="YOUR ACCOUNT"){
+      return true;
+    }else{
+      return false;
+    }
+  }
   ngAfterViewInit() {
     this.loadingFinished=true;
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -14,7 +14,7 @@ export class ChoiceComponent implements OnInit,AfterViewInit {
   type;
   man;
   loadingFinished;
-  @Input() public content;
+  content;
   ngOnInit(): void {
     this.gender = (this.route.snapshot.paramMap.get('type'));
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/'+this.gender).subscribe(data => {

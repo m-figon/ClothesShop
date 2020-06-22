@@ -36,6 +36,16 @@ export class CartComponent implements OnInit,AfterViewInit {
   }
   ngOnInit(): void {
     this.cartInit();
+    setInterval(()=>{
+      this.logedUser = this.appService.getAccount();
+    },500)
+  }
+  accountCheck(){
+    if(this.logedUser==="YOUR ACCOUNT"){
+      return true;
+    }else{
+      return false;
+    }
   }
   ngAfterViewInit() {
     this.loadingFinished=true;

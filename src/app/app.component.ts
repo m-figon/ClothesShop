@@ -39,6 +39,7 @@ export class AppComponent implements OnInit {
     setInterval(()=>{
       if(this.appService.getAccount()){
         this.account=this.appService.getAccount();
+        console.log('account comp ' + this.account);
       }
     },500)
   }

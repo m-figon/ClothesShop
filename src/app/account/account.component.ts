@@ -7,7 +7,7 @@ import { AppService } from '../app.service';
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css']
 })
-export class AccountComponent implements OnInit,AfterViewInit {
+export class AccountComponent implements OnInit, AfterViewInit {
   Email = "Email";
   Password = "Password";
   Name = "Name";
@@ -16,7 +16,7 @@ export class AccountComponent implements OnInit,AfterViewInit {
   Surname = "Surname";
   login = true;
   register = false;
-  passwordType="text";
+  passwordType = "text";
   users;
   emptyEmail;
   emptyPassword;
@@ -40,14 +40,14 @@ export class AccountComponent implements OnInit,AfterViewInit {
     this.Surname = "Surname";
   }
   ngAfterViewInit() {
-    this.loadingFinished=true;
+    this.loadingFinished = true;
   }
   focus(value1) {
     //console.log(value1);
     if (eval('this.' + value1) === value1) {
       eval('this.' + value1 + "=''")
-      if(value1==="Password"){
-        this.passwordType="password";
+      if (value1 === "Password") {
+        this.passwordType = "password";
       }
     }
     if (value1 === "resetEmail" && this.resetEmail === "Email") {
@@ -55,16 +55,16 @@ export class AccountComponent implements OnInit,AfterViewInit {
     }
     if (value1 === "resetPassword" && this.resetPassword === "New Password") {
       this.resetPassword = "";
-      this.passwordType="password";
+      this.passwordType = "password";
     }
-    
+
   }
   blur(value1) {
     //console.log('this.'+value1+"="+"'"+value1+"'");
     if (eval('this.' + value1) === '') {
       eval('this.' + value1 + "=" + "'" + value1 + "'")
-      if(value1==="Password"){
-        this.passwordType="text";
+      if (value1 === "Password") {
+        this.passwordType = "text";
       }
     }
     if (value1 === "resetEmail" && (this.resetEmail === " " || this.resetEmail === "" || this.resetEmail === "resetEmail")) {
@@ -72,9 +72,9 @@ export class AccountComponent implements OnInit,AfterViewInit {
     }
     if (value1 === "resetPassword" && (this.resetPassword === " " || this.resetPassword === "" || this.resetPassword === "resetPassword")) {
       this.resetPassword = "New Password";
-      this.passwordType="text";
+      this.passwordType = "text";
     }
-    
+
   }
   ngOnInit(): void {
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/users').subscribe(data => {
@@ -84,6 +84,16 @@ export class AccountComponent implements OnInit,AfterViewInit {
     })
   }
   loginFunc() {
+    if (this.Email === "" || this.Email === " " || this.Email === "Email") {
+      this.emptyEmail = true;
+    }
+    if (this.Password === "" || this.Password === " " || this.Password === "Password") {
+      this.emptyPassword = true;
+    }
+    if (this.Email === "" || this.Email === " " || this.Email === "Email" || this.Password === "" || this.Password === " " || this.Password === "Password") {
+      this.wrongData = true;
+    }
+
     for (let item of this.users) {
       if (this.Email === item.email && this.Password === item.password) {
         alert('correct user');
@@ -93,17 +103,14 @@ export class AccountComponent implements OnInit,AfterViewInit {
         this.emptySurname = false;
         this.wrongData = false;
         this.appService.setAccount(this.Email);
+        this.Email = "Email";
+        this.Password = "Password";
+        this.Name = "Name";
+        this.Surname = "Surname";
+        this.passwordType="text";
       }
     }
-    if (this.Email === "" || this.Email === " " || this.Email === "Email") {
-      this.emptyEmail = true;
-    }
-    if (this.Password === "" || this.Password === " " || this.Password === "Password") {
-      this.emptyPassword = true;
-    }
-    if (this.Email !== "" && this.Email !== " " && this.Email !== "Email" && this.Password !== "" && this.Password !== " " && this.Password !== "Password") {
-      this.wrongData = true;
-    }
+    
   }
   showHideTooltip(value) {
     this.tooltip = value;
@@ -117,17 +124,17 @@ export class AccountComponent implements OnInit,AfterViewInit {
     for (let item of this.users) {
       if (item.email === this.resetEmail) {
         this.http.put<any>("https://rocky-citadel-32862.herokuapp.com/ClothesShop/users/" + item.id, {
-        email: item.email,
-        name: item.name,
-        surname: item.surname,
-        password: this.resetPassword,
-        cart: item.cart,
-        orders: item.orders,
-        id: item.id
-      }).toPromise().then(data => {
-        console.log(data);
-        alert('user password changed');
-      })
+          email: item.email,
+          name: item.name,
+          surname: item.surname,
+          password: this.resetPassword,
+          cart: item.cart,
+          orders: item.orders,
+          id: item.id
+        }).toPromise().then(data => {
+          console.log(data);
+          alert('user password changed');
+        })
       }
     }
   }
@@ -176,6 +183,11 @@ export class AccountComponent implements OnInit,AfterViewInit {
         this.emptyName = false;
         this.emptySurname = false;
         this.wrongData = false;
+        this.Email = "Email";
+        this.Password = "Password";
+        this.Name = "Name";
+        this.Surname = "Surname";
+        this.passwordType="text";
         alert('new user created');
       })
     } else {

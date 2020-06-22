@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AppService {
-  account="slickj@gmail.com";
+  account="YOUR ACCOUNT";
   cart = [];
   constructor() { }
   setAccount(value){

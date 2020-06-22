@@ -1,4 +1,4 @@
-<ng-container *ngIf="logedUser && loadingFinished">
+<ng-container *ngIf="!accountCheck() && loadingFinished">
     <div class="cart">
         <ng-container *ngIf="cart.length>0">
             <div class="products">
@@ -93,7 +93,7 @@
         </ng-container>
     </div>
 </ng-container>
-<ng-template *ngIf="!logedUser && loadingFinished">
+<ng-container *ngIf="accountCheck() && loadingFinished">
     <div class="one-line-display">
         <div class="one-line">
             <h1>To use cart </h1><a routerLink="/account" routerLinkActive="active">
@@ -101,7 +101,7 @@
             </a>
         </div>
     </div>
-</ng-template>
+</ng-container>
 <ng-container *ngIf="!loadingFinished">
     <div class="loading-display">
         <img src="assets/img/load.gif">
