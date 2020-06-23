@@ -51,6 +51,7 @@ export class SettingsComponent implements OnInit,AfterViewInit {
         surname: this.surname,
         password: this.users[this.id].password,
         cart: this.users[this.id].cart,
+        orders: this.users[this.id].orders,
         id: this.users[this.id].id
       }).toPromise().then(data => {
         console.log(data);
@@ -65,6 +66,7 @@ export class SettingsComponent implements OnInit,AfterViewInit {
         surname: this.surname,
         password: this.newPassword,
         cart: this.users[this.id].cart,
+        orders: this.users[this.id].orders,
         id: this.users[this.id].id
       }).toPromise().then(data => {
         console.log(data);
@@ -82,6 +84,7 @@ export class SettingsComponent implements OnInit,AfterViewInit {
         surname:this.users[this.id].surname,
         password: this.newPassword,
         cart: this.users[this.id].cart,
+        orders: this.users[this.id].orders,
         id: this.users[this.id].id
       }).toPromise().then(data => {
         console.log(data);

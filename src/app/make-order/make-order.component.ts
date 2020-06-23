@@ -19,6 +19,12 @@ export class MakeOrderComponent implements OnInit,AfterViewInit {
   city="";
   postCode="";
   street="";
+  wrongEmail;
+  wrongName;
+  wrongSurname;
+  wrongCity;
+  wrongPostCode;
+  wrongStreet;
   beginning;
   users;
   logedUser;
@@ -59,8 +65,35 @@ export class MakeOrderComponent implements OnInit,AfterViewInit {
   }
   changeStep(){
     if(!this.beginning){
-      if(this.city && this.postCode && this.street){
-        this.beginning=!this.beginning;
+      if(this.city && this.postCode && this.street && this.email && this.name && this.surname){
+        let correctFlag=true;
+          if(!(this.postCode.match(/^([0-9]{2})([\-]{1}[0-9]{3})?$/) === null)){
+            this.wrongPostCode=false;
+          }else{
+            this.wrongPostCode=true;
+            correctFlag=false;
+          }
+          if (!(this.email.match(/^[a-z0-9\._\-]+@[a-z0-9\.\-]+\.[a-z]{2,4}$/) === null)) {
+            this.wrongEmail=false;
+          }else{
+            this.wrongEmail=true;
+            correctFlag=false;
+          }
+          if (!(this.name.match(/^[a-zA-Z0-9\.\-_]{4,10}$/) === null)) {
+            this.wrongName=false;
+          }else{
+            this.wrongName=true;
+            correctFlag=false;
+          }
+          if (!(this.surname.match(/^[a-zA-Z0-9\.\-_]{4,10}$/) === null)) {
+            this.wrongSurname=false;
+          }else{
+            this.wrongSurname=true;
+            correctFlag=false;
+          }
+          if(correctFlag){
+            this.beginning=!this.beginning;
+          } 
       }else{
         alert("fill all inputs");
       }

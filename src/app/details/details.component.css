@@ -92,15 +92,14 @@
     height: 1rem;
     width: 1rem;
 }
-@media screen and (max-width: 1000px) {
-    .detail{
-        width:30rem;
-    }
-}
-@media screen and (max-width: 700px) {
+
+@media screen and (max-width: 900px) {
     .detail img{
         height:15rem;
         width:12rem;
+    }
+    .detail{
+        width:30rem;
     }
     .detail h1{
         font-size: 1rem;

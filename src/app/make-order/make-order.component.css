@@ -118,6 +118,9 @@
     height: 1rem;
     width: 1rem;
 }
+.make-order-display p{
+    color: rgb(150, 3, 3);
+}
 @media screen and (max-width: 1100px) {
     .item-display, .button-display{
         width:35rem;

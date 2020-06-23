@@ -4,16 +4,22 @@
         <div class="make-order-display">
             <p>Email*</p>
             <input [(ngModel)]="email">
+            <p *ngIf="wrongEmail">Data is not correct</p>
             <p>Name*</p>
             <input [(ngModel)]="name">
+            <p *ngIf="wrongName">Data is not correct</p>
             <p>Surname*</p>
             <input [(ngModel)]="surname">
+            <p *ngIf="wrongSurname">Data is not correct</p>
             <p>City*</p>
             <input [(ngModel)]="city">
+            <p *ngIf="wrongEmail">Data is not correct</p>
             <p>Post code*</p>
             <input [(ngModel)]="postCode">
+            <p *ngIf="wrongPostCode">Data is not correct</p>
             <p>Street*</p>
             <input [(ngModel)]="street">
+            <p *ngIf="wrongStreet">Data is not correct</p>
             <button (click)="changeStep()">NEXT STEP</button>
         </div>
     </div>

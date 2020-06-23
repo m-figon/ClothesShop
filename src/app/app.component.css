@@ -161,19 +161,22 @@
 }
 @media screen and (max-width: 450px) {
     #cart-div{
-        margin-left: -5rem;
+        margin-left: -7rem;
     }
     .left{
         width:25%;
     }
     .right{
-        width:40%;
+        width:60%;
+    }
+    .options-account{
+        left: -7rem;
     }
     .nav-bar h2 {
         font-size: 0.7rem;
     } 
     .middle{
-        width:35%;
+        width:30%;
     }
     .nav-bar h2 {
         margin-left: 0.5rem;
