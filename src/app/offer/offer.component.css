@@ -116,3 +116,49 @@
     height: 1rem;
     width: 1rem;
 }
+@media screen and (max-width: 1100px) {
+    .offer-menu{
+        width:40rem;
+    }
+    .single-offer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 8.5rem;
+        height: 15rem;
+        margin: 0 1rem;
+    }
+    .single-offer img{
+        width: 8rem;
+        height:10rem;
+    }
+    .single-offer h1{
+        font-size: 0.7rem;
+    }
+    .cloth-text{
+        width: 8.5rem;
+    }
+}
+@media screen and (max-width: 700px) {
+    .offer-menu{
+        width:30rem;
+    }
+    .offers{
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (max-width: 550px) {
+    .offer-menu{
+        width:18rem;
+    }
+    .single-line h1{
+        font-size: 1rem;
+    }
+    .single-offer{
+        margin: 0 0.5rem
+    }
+    .offers{
+        grid-template-columns: auto auto;
+    }
+}

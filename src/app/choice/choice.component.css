@@ -102,3 +102,49 @@
     height: 1rem;
     width: 1rem;
 }
+@media screen and (max-width: 1100px) {
+    .offer-menu{
+        width:40rem;
+    }
+    .cloth{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 8.5rem;
+        height: 15rem;
+        margin: 0 1rem;
+    }
+    .cloth img{
+        width: 8rem;
+        height:10rem;
+    }
+    .cloth h1{
+        font-size: 0.7rem;
+    }
+    .cloth-text{
+        width: 8.5rem;
+    }
+}
+@media screen and (max-width: 700px) {
+    .offer-menu{
+        width:30rem;
+    }
+    .clothes{
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (max-width: 550px) {
+    .offer-menu{
+        width:18rem;
+    }
+    .item-line h1{
+        font-size: 1rem;
+    }
+    .cloth{
+        margin: 0 0.5rem
+    }
+    .clothes{
+        grid-template-columns: auto auto;
+    }
+}

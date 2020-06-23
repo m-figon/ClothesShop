@@ -164,4 +164,63 @@
 .loading-display img{
     height: 1rem;
     width: 1rem;
+} 
+@media screen and (max-width: 1350px) {
+    .account h2{
+        font-size: 1.2rem;
+    }
+    .account h1{
+        font-size: 1rem;
+    }
+    .login-form, .register-form{
+        width:20rem;
+        height:30rem;
+    }
+}
+@media screen and (max-width: 850px) {
+    .account h2{
+        font-size: 1.0rem;
+    }
+    .account h1{
+        font-size: 0.8rem;
+    }
+    .login-form, .register-form{
+        width:15rem;
+        height:30rem;
+    }
+    .login-form input,
+.register-form input{
+    font-size: 0.7rem;
+    width:60%;
+}
+}
+@media screen and (max-width: 600px) {
+    .account h2{
+        font-size: 0.8rem;
+    }
+    .account h1{
+        font-size: 0.7rem;
+    }
+    .login-form, .register-form{
+        width:12rem;
+        height:30rem;
+    }
+    .account button{
+        width:60%;
+    }
+    #black,#cream{
+        font-size: 0.8rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .account h2{
+        font-size: 0.7rem;
+    }
+    .account h1{
+        font-size: 0.7rem;
+    }
+    .login-form, .register-form{
+        width:10rem;
+        height:30rem;
+    }
 }
