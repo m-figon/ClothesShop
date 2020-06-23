@@ -14,6 +14,7 @@ export class OfferComponent implements OnInit,AfterViewInit {
   content;
   change;
   loadingFinished;
+  fetchingFinished;
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -21,20 +22,24 @@ export class OfferComponent implements OnInit,AfterViewInit {
       this.lastType=this.type;
       this.type = (this.route.snapshot.paramMap.get('type'));
       if (this.type === "man" && (this.lastType==="woman" || !this.lastType)) {
+        this.fetchingFinished=false;
         this.ad = "assets/img/man.jpg"
         this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/' + this.type).subscribe(data => {
           //console.log(data);
           this.content = data;
           this.change = true;
+          this.fetchingFinished=true;
           console.log(this.content);
         })
       }
       if (this.type === "woman"  && (this.lastType==="man" || !this.lastType)) {
+        this.fetchingFinished=false;
         this.ad = "assets/img/woman.jpg"
         this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/' + this.type).subscribe(data => {
           //console.log(data);
           this.content = data;
           this.change = true;
+          this.fetchingFinished=true;
           console.log(this.content);
         })
       }

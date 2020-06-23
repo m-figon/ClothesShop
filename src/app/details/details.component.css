@@ -92,3 +92,37 @@
     height: 1rem;
     width: 1rem;
 }
+@media screen and (max-width: 1000px) {
+    .detail{
+        width:30rem;
+    }
+}
+@media screen and (max-width: 700px) {
+    .detail img{
+        height:15rem;
+        width:12rem;
+    }
+    .detail h1{
+        font-size: 1rem;
+    }
+    .detail select,
+    .detail button{
+        width:8rem
+    }
+}
+@media screen and (max-width: 500px) {
+    .detail{
+        width:20rem;
+    }
+    .detail .left-side,
+    .detail .right-side{
+        width: 50%;
+    }
+    .detail h1{
+        font-size: 0.8rem;
+    }
+    .detail select,
+    .detail button{
+        width:6rem
+    }
+}

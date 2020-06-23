@@ -14,6 +14,7 @@ export class ChoiceComponent implements OnInit,AfterViewInit {
   type;
   man;
   loadingFinished;
+  fetchingFinished;
   content;
   lastType;;
   ngOnInit(): void {
@@ -21,6 +22,7 @@ export class ChoiceComponent implements OnInit,AfterViewInit {
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/'+this.gender).subscribe(data => {
       //console.log(data);
       this.man = data;
+      this.fetchingFinished=true;
       console.log(this.man);
     })
     setInterval(()=>{

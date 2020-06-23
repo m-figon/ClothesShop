@@ -1,5 +1,5 @@
 <div class="choice">
-    <ng-container *ngIf="content && loadingFinished">
+    <ng-container *ngIf="content && loadingFinished && fetchingFinished">
         <div class="offer-menu">
             <div class="single-line">
                 <div class="item-line">
@@ -33,7 +33,7 @@
             </ng-container>
         </div>
     </ng-container>
-    <ng-container *ngIf="!loadingFinished">
+    <ng-container *ngIf="!loadingFinished || !fetchingFinished">
         <div class="loading-display">
             <img src="assets/img/load.gif">
         </div>

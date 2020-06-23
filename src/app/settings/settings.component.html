@@ -1,17 +1,18 @@
 <div class="settings" *ngIf="loadingFinished && logedUser">
-    <div class="single-line">
-        <div class="item-line">
-            <a routerLink="/account/settings" routerLinkActive="active">
-                <h1 id="selected">Settings</h1>
-            </a>
-        </div>
-        <div class="item-line">
-            <a routerLink="/account/orders" routerLinkActive="active">
-                <h1>Orders</h1>
-            </a>
-        </div>
-    </div>
+    
     <div class="settings-display">
+        <div class="single-line">
+            <div class="item-line">
+                <a routerLink="/account/settings" routerLinkActive="active">
+                    <h1 id="selected">Settings</h1>
+                </a>
+            </div>
+            <div class="item-line">
+                <a routerLink="/account/orders" routerLinkActive="active">
+                    <h1>Orders</h1>
+                </a>
+            </div>
+        </div>
         <div class="settings-one-line">
             <h1>CHANGING DATA</h1>
             <input type="checkbox" [(ngModel)]="changingData">

@@ -117,3 +117,19 @@
     height: 1rem;
     width: 1rem;
 }
+@media screen and (max-width: 1100px) {
+    .make-order-display, .item-display{
+        width:30rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .make-order-display, .item-display{
+        width:19rem;
+    }
+    .single-line{
+        width: 18rem;
+    }
+    .item-display h1{
+        font-size: 0.5rem;
+    }
+}
