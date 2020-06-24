@@ -1,0 +1,132 @@
+@import "../main";
+.offer{
+    width: 100vw;
+    height:calc(100vh - 3rem);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-top:3rem;
+    img{
+        height:40rem;
+        width:60rem;
+    }
+}
+.ad-text{
+    position: absolute;
+    top:40%;
+    left:35%;
+    .flex-box();
+    height: 10rem;
+    border-radius: 3px;
+    width:30rem;
+    background-color: rgba(0, 0, 0, 0.377);
+    h1{
+        font-size: 5rem;
+        color:white;
+        text-shadow: 1px 1px 10px rgb(85, 85, 85);
+        letter-spacing: 10px;
+    }
+}
+.cloth-text{
+    width: 13rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.offer-menu{
+    width:61rem;
+    display: flex;
+    align-items: center;
+}
+.single-line{
+    display: flex;
+    align-items: center;
+    width:30rem;
+    background-color: black;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    h1{
+        color:white;
+        font-size: 1.2rem;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+.item-line{
+    width:33%;
+    .flex-box();
+}
+.one-line{
+    display: flex;
+}
+.offers{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.single-offer{
+    .flex-box();
+    flex-direction: column;
+    width: 12rem;
+    height: 20rem;
+    margin: 0 2rem;
+    img{
+        width: 13rem;
+        height:15rem;
+        margin-bottom: 0.5rem;
+        border: 1px solid rgb(228, 228, 228);
+    }
+    h1{
+        font-size: 1.0rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+#red{
+    color: rgb(131, 3, 3);
+    margin-right: 1rem;
+}
+.loading-display();
+@media screen and (max-width: 1100px) {
+    .offer-menu{
+        width:40rem;
+    }
+    .single-offer{
+        width: 8.5rem;
+        height: 15rem;
+        margin: 0 1rem;
+        img{
+            width: 8rem;
+            height:10rem;
+        }
+        h1{
+            font-size: 0.7rem;
+        }
+    }
+    .cloth-text{
+        width: 8.5rem;
+    }
+}
+@media screen and (max-width: 700px) {
+    .offer-menu{
+        width:30rem;
+    }
+    .offers{
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (max-width: 550px) {
+    .offer-menu{
+        width:18rem;
+    }
+    .single-line h1{
+        font-size: 1rem;
+    }
+    .single-offer{
+        margin: 0 0.5rem
+    }
+    .offers{
+        grid-template-columns: auto auto;
+    }
+}

@@ -1,0 +1,181 @@
+@import "main";
+.nav-bar {
+    width: 100vw;
+    height: 3rem;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(206, 206, 206);
+    .text {
+        padding: 0rem 0.5rem;
+        .flex-box();
+        width: auto;
+        height: 100%;
+        border-top: 1.5px solid rgba(0, 0, 0, 0);
+        margin-left: 1rem;
+        margin-right: 1rem;
+        &:hover {
+            border-top: 1.5px solid black;
+        }
+    }
+    h1 {
+        font-weight: 300;
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    .right img {
+        width: 2rem;
+        height: 2rem;
+    }
+    h2 {
+        font-weight: 700;
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+        margin-left: 2rem;
+    }
+}
+.options-account {
+    position: relative;
+    top: 2.6rem;
+    left: -12rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 5rem;
+    background-color: white;
+    h1 {
+        font-weight: 300;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        &:hover{
+            text-decoration: underline;
+
+        }
+    }
+}
+
+.left {
+    width: 40%;
+    .flex-box();
+}
+.middle {
+    width: 30%;
+    .flex-box();
+}
+.right {
+    width: 100%;
+    .flex-box();
+}
+#cart-div{
+    margin-left:-9rem;
+    width: 4rem;
+}
+#sign-out:hover {
+    cursor: pointer;
+}
+@media screen and (max-width: 1250px) {
+    .middle {
+        width: 50%;
+    }
+    .right{
+        width:60%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .left{
+        width:40%;
+    }
+    .middle {
+        width: 30%;
+    }
+    .right {
+        width: 70%;
+    } 
+    .nav-bar h2 {
+        font-size: 1.2rem;
+    }
+    .nav-bar h1 {
+        font-size: 0.8rem;
+    } 
+}
+@media screen and (max-width: 800px) {
+    .right {
+        width: 40%;
+    } 
+}
+@media screen and (max-width: 700px) {
+    .nav-bar h2 {
+        font-size: 1.0rem;
+        margin-left: 1rem;
+    }
+    .nav-bar h1{
+        font-size: 0.7rem;
+    }
+    .left{
+        width: 35%;
+    }
+    .middle{
+        width: 40%;
+    }
+    .right{
+        width:40%;
+    }
+    #cart-div{
+        margin-left: -6rem;
+        width:2.5rem;
+    }
+    .options-account {
+        left: -10rem;
+    }
+}
+@media screen and (max-width: 550px) {
+    .nav-bar h2 {
+        font-size: 0.8rem;
+    } 
+    .right img{
+        display: none;
+    }
+    .nav-bar .text{
+        margin-left: 0.2rem;
+        margin-right: 0.2rem;
+    }
+    #cart-div{
+        margin-left: -4rem;
+    }
+    .options-account {
+        left: -8rem;
+    }
+}
+@media screen and (max-width: 450px) {
+    #cart-div{
+        margin-left: -7rem;
+    }
+    .left{
+        width:25%;
+    }
+    .right{
+        width:60%;
+    }
+    .options-account{
+        left: -7rem;
+    }
+    .nav-bar h2 {
+        font-size: 0.7rem;
+    } 
+    .middle{
+        width:30%;
+    }
+    .nav-bar h2 {
+        margin-left: 0.5rem;
+    }
+    .nav-bar .text{
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+    }
+}

@@ -52,8 +52,8 @@
 .item-line {
   width: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 #selected {
   text-decoration: underline;

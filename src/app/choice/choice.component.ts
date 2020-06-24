@@ -28,7 +28,6 @@ export class ChoiceComponent implements OnInit,AfterViewInit {
     setInterval(()=>{
       this.lastType=this.type;
       this.type = (this.route.snapshot.paramMap.get('details'));
-      console.log(this.type);
       if(this.lastType!==this.type){
         for(let item of this.man){
           if(item.type===this.type){

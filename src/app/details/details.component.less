@@ -1,0 +1,101 @@
+@import "../main";
+.details {
+    margin-top: 3rem;
+    width: 100vw;
+    height:calc(100vh - 3rem);
+    .flex-box();
+    select{
+        width:12rem;
+        height: 2rem;
+        padding: 0 1rem;
+        font-size: 1.2rem;
+        border: 1px solid gray;
+        margin-bottom: 2rem;
+    }
+}
+.detail {
+    width: 50rem;
+    height: 33rem;
+    .flex-box();
+    img {
+        height: 25rem;
+        width: 20rem;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+    }
+    button {
+        height: 3rem;
+        background-color: black;
+        color: white;
+        border: 0;
+        width:12rem;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+.left-side {
+    width:40%;
+    height:100%;
+    flex-direction: column;
+    .flex-box();
+
+}
+.right-side {
+    width:60%;
+    height:100%;
+    flex-direction: column;
+    .flex-box();
+}
+.one-line{
+    display: flex;
+}
+#link{
+    color: rgb(131, 3, 3);
+    margin-left: 0.5rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+#red{
+    color: rgb(131, 3, 3);
+    margin-right: 1rem;
+}
+.loading-display();
+@media screen and (max-width: 900px) {
+    .detail{
+        width:30rem;
+        img{
+            height:15rem;
+            width:12rem;
+        }
+        h1{
+            font-size: 1rem;
+        }
+        select,
+        button{
+        width:8rem
+    }
+    }
+}
+@media screen and (max-width: 500px) {
+    .detail{
+        width:20rem;
+        .left-side,
+    .right-side{
+        width: 50%;
+    }
+    h1{
+        font-size: 0.8rem;
+    }
+    select,
+    button{
+        width:6rem
+    }
+    }
+    
+}

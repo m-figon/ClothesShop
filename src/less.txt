@@ -1,0 +1,19 @@
+lessc src/app/app.component.less src/app/app.component.css
+
+lessc src/app/settings/settings.component.less src/app/settings/settings.component.css
+
+lessc src/app/orders/orders.component.less src/app/orders/orders.component.css
+
+lessc src/app/offer/offer.component.less src/app/offer/offer.component.css
+
+lessc src/app/home/home.component.less src/app/home/home.component.css
+
+lessc src/app/details/details.component.less src/app/details/details.component.css
+
+lessc src/app/choice/choice.component.less src/app/choice/choice.component.css
+
+lessc src/app/cart/cart.component.less src/app/cart/cart.component.css
+
+lessc src/app/account/account.component.less src/app/account/account.component.css
+
+lessc src/app/make-order/make-order.component.less src/app/make-order/make-order.component.css

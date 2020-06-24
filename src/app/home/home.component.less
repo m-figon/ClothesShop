@@ -1,0 +1,101 @@
+@import "../main";
+.home {
+    margin-top: 3rem;
+    width: 100vw;
+    height: calc(100vh - 3rem);
+    display: flex;
+    overflow: hidden;
+    img {
+        width: 100vw;
+        height: 100%;
+    }
+    button {
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        z-index: 2;
+    }
+}
+.ad-display {
+    top: 3rem;
+    left: 0%;
+    width: 100vw;
+    height: calc(100vh - 3rem);
+    .flex-box();
+    position: absolute;
+    z-index: 2;
+}
+.ad-text {
+    .flex-box();
+    height: 12rem;
+    border-radius: 3px;
+    padding-left: 2rem;
+    width: 25rem;
+    background-color: rgba(0, 0, 0, 0.377);
+    z-index: 3;
+    h1 {
+        font-size: 4rem;
+        color: white;
+        text-shadow: 1px 1px 10px rgb(85, 85, 85);
+        letter-spacing: 10px;
+    }
+}
+.imgs {
+    width: 300vw;
+    display: flex;
+    height: 100%;
+    animation: 20s slidy infinite;
+}
+
+#left {
+    top: 50%;
+    left: 0%;
+}
+#right {
+    top: 50%;
+    left: 95%;
+}
+@keyframes slidy {
+    0% {
+        left: 0;
+    }
+    33% {
+        margin-left: -100vw;
+    }
+    66% {
+        margin-left: -200vw;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+.loading-display();
+@media screen and (max-width: 900px) {
+    .imgs {
+        display: none;
+    }
+    .home {
+        background: url("./home.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .ad-text {
+        height: 10rem;
+        width: 20rem;
+        h1 {
+            font-size: 3rem;
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .ad-text {
+        height: 10rem;
+        width: 15rem;
+        padding-left: 1rem;
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+}

@@ -74,7 +74,6 @@ export class SettingsComponent implements OnInit, AfterViewInit {
     }else{
       alert('wrong data')
     }
-
   }
   changePassword() {
     if (this.users[this.id].password === this.currentPassword && this.newPassword === this.confirmPassword && !(this.newPassword.match(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\.\-_@$!%*#?&])[A-Za-z\d\.\-_@$!%*#?&]{8,13}$/) === null)) {

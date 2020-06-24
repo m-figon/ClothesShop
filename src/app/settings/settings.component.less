@@ -1,0 +1,96 @@
+@import "../main";
+.settings{
+    margin-top: 3rem;
+    padding-top: 3rem;
+    display: flex;
+    width:100vw;
+    height:calc(100vh - 3rem);
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(236, 236, 236);
+    input{
+        border: 0;
+        width:80%;
+        height:1.5rem;
+        border: 1px solid rgb(219, 219, 219);
+        margin-top: 0;
+    }
+    p{
+        margin-bottom: 0;
+    }
+    button{
+        height:3rem;
+        background-color: black;
+        color: white;
+        width: 80%;
+        border: 0;
+        font-size: 1.2rem;
+        margin-top:2rem;
+        margin-bottom: 1rem;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    h1{
+        font-size: 1.2rem;
+    }
+}
+.single-line{
+    display: flex;
+    align-items: center;
+    width:100%;
+    background-color: black;
+    margin-bottom: 2rem;
+    h1{
+        color:white;
+        font-size: 1.2rem;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+.item-line{
+    width:50%;
+    .flex-box();
+}
+#selected{
+    text-decoration: underline;
+}
+.settings-display{
+    width:20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.settings-one-line{
+    display: flex;
+    align-items: center;
+    input{
+        width: auto;
+    }
+    h1{
+        font-size: 1.2rem;
+        border-bottom: 1px solid black;
+    }    
+}
+.loading-display();
+@media screen and (max-width: 400px) {
+    .settings-display{
+        width:10rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .settings input{
+        width:100%;
+    }
+}
+@media screen and (max-height: 750px) {
+    .settings{
+        height:auto;
+    }
+}

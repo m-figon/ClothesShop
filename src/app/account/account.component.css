@@ -1,234 +1,231 @@
 .account {
-    margin-top: 3rem;
-    width: 100vw;
-    height: calc(100vh - 3rem);
-    display: flex;
-}
-.password {
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.315);
-    z-index: 5;
-}
-.password-frame {
-    width: 30rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-bottom: 1px solid gray;
-}
-.password-content {
-    width: 80%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: white;
-    border-bottom: 1px solid gray;
-}
-
-.login {
-    width: 55%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-}
-.login-form,
-.register-form {
-    width: 30rem;
-    height: 30rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.login-form input,
-.register-form input {
-    border: 0;
-    width: 80%;
-    height: 2rem;
-    border-bottom: 1px solid gray;
-    margin-top: 2rem;
+  margin-top: 3rem;
+  width: 100vw;
+  height: calc(100vh - 3rem);
+  display: flex;
 }
 .account button {
-    margin-top: 2rem;
-}
-.register-form input {
-    background-color: rgb(230, 230, 230);
-}
-#underline {
-    text-decoration: underline;
-}
-#underline:hover {
-    cursor: pointer;
-}
-.account button {
-    width: 80%;
-}
-#black {
-    height: 3rem;
-    background-color: black;
-    color: white;
-    border: 0;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+  margin-top: 2rem;
+  width: 80%;
 }
 .account p {
-    color: rgb(151, 1, 1);
-}
-#white,
-#cream {
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-    height: 3rem;
-    border: 2px solid black;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-#cream {
-    background-color: rgb(230, 230, 230);
-}
-#white:hover,
-#cream:hover {
-    background-color: black;
-    color: white;
-    border: 2px solid black;
-    cursor: pointer;
-}
-#black {
-    cursor: pointer;
+  color: #970101;
 }
 .account h1 {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 .account h2 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
-.register {
-    width: 45%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(230, 230, 230);
+.password {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.315);
+  z-index: 5;
+}
+.password-frame {
+  width: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid gray;
+}
+.password-content {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  border-bottom: 1px solid gray;
 }
 .password-content input,
 .password-content button {
-    width: 100%;
+  width: 100%;
+}
+.login {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.login-form,
+.register-form {
+  width: 30rem;
+  height: 30rem;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-form input,
+.register-form input {
+  border: 0;
+  width: 80%;
+  height: 2rem;
+  border-bottom: 1px solid gray;
+  margin-top: 2rem;
+}
+.register-form input {
+  background-color: #e6e6e6;
+}
+#underline {
+  text-decoration: underline;
+}
+#underline:hover {
+  cursor: pointer;
+}
+#black {
+  height: 3rem;
+  background-color: black;
+  color: white;
+  border: 0;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+#white,
+#cream {
+  background-color: white;
+  color: black;
+  height: 3rem;
+  border: 2px solid black;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+#white:hover,
+#cream:hover {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  cursor: pointer;
+}
+#cream {
+  background-color: #e6e6e6;
+}
+#black {
+  cursor: pointer;
+}
+.register {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e6e6;
 }
 #password-x {
-    width: 2rem;
-    background-color: white;
-    border: 0;
-    font-size: 1.5rem;
-    position: relative;
-    top: 12%;
-    left: 90%;
-}
-#password-x {
-    border: 0px solid black;
-    font-size: 1.5rem;
-    position: relative;
-    top: 12%;
-    left: 90%;
+  width: 2rem;
+  background-color: white;
+  border: 0px solid black;
+  font-size: 1.5rem;
+  position: relative;
+  top: 12%;
+  left: 90%;
 }
 #password-x:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 .loading-display {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ece9e6; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ffffff, #ece9e6); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to right,
-        #ffffff,
-        #ece9e6
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ece9e6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffffff, #ece9e6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ffffff, #ece9e6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .loading-display img {
-    height: 1rem;
-    width: 1rem;
+  height: 1rem;
+  width: 1rem;
 }
 @media screen and (max-width: 1350px) {
-    .account h2 {
-        font-size: 1.2rem;
-    }
-    .account h1 {
-        font-size: 1rem;
-    }
-    .login-form,
-    .register-form {
-        width: 20rem;
-        height: 30rem;
-    }
+  .account h2 {
+    font-size: 1.2rem;
+  }
+  .account h1 {
+    font-size: 1rem;
+  }
+  .login-form,
+  .register-form {
+    width: 20rem;
+    height: 30rem;
+  }
 }
 @media screen and (max-width: 850px) {
-    .account h2 {
-        font-size: 1rem;
-    }
-    .account h1 {
-        font-size: 0.8rem;
-    }
-    .login-form,
-    .register-form {
-        width: 15rem;
-        height: 30rem;
-    }
-    .login-form input,
-    .register-form input {
-        font-size: 0.7rem;
-        width: 60%;
-    }
+  .account h2 {
+    font-size: 1rem;
+  }
+  .account h1 {
+    font-size: 0.8rem;
+  }
+  .login-form,
+  .register-form {
+    width: 15rem;
+    height: 30rem;
+  }
+  .login-form input,
+  .register-form input {
+    font-size: 0.7rem;
+    width: 80%;
+  }
 }
 @media screen and (max-width: 600px) {
-    .account h2 {
-        font-size: 0.8rem;
-    }
-    .account h1 {
-        font-size: 0.7rem;
-    }
-    .login-form,
-    .register-form {
-        width: 12rem;
-        height: 30rem;
-    }
-    .account button {
-        width: 60%;
-    }
-    #black,
-    #cream {
-        font-size: 0.8rem;
-    }
+  .account h2 {
+    font-size: 0.8rem;
+  }
+  .account h1 {
+    font-size: 0.7rem;
+  }
+  .login-form,
+  .register-form {
+    width: 12rem;
+    height: 30rem;
+  }
+  .account button {
+    width: 60%;
+  }
+  #black,
+  #cream {
+    font-size: 0.8rem;
+  }
+  .password-frame {
+    width: 17rem;
+  }
+  .password-content {
+    align-items: center;
+  }
+  #password-x {
+    left: 45%;
+  }
 }
 @media screen and (max-width: 400px) {
-    .account h2 {
-        font-size: 0.7rem;
-    }
-    .account h1 {
-        font-size: 0.7rem;
-    }
-    .login-form,
-    .register-form {
-        width: 10rem;
-        height: 30rem;
-    }
+  .account h2 {
+    font-size: 0.7rem;
+  }
+  .account h1 {
+    font-size: 0.7rem;
+  }
+  .login-form,
+  .register-form {
+    width: 10rem;
+    height: 30rem;
+  }
 }

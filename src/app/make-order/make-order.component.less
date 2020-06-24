@@ -1,0 +1,112 @@
+@import "../main";
+.make-order{
+    margin-top: 3rem;
+    width:100vw;
+    height:calc(100vh - 3rem);
+    .flex-box();
+    background-color: rgb(236, 236, 236);
+    input{
+        border: 0;
+        width:15rem;
+        height:1.5rem;
+        border: 1px solid rgb(219, 219, 219);
+        margin-top: 0;
+    }
+    p{
+        margin-bottom: 0;
+    }
+    button{
+        height:3rem;
+        background-color: black;
+        color: white;
+        border: 0;
+        font-size: 1.2rem;
+        margin-top:2rem;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+.make-order-display{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    p{
+        color: rgb(150, 3, 3);
+    }
+}
+.item-display{
+    .flex-box();
+    width:54rem;
+    height:5rem;
+    background-color: white;
+    border: 1.0px solid #7c7c7c;
+    border-bottom: 0;
+    img{
+        width: 3rem;
+        height:4rem;
+        margin-right: 1rem;
+        border: 1px solid rgb(228, 228, 228);
+    }
+    h1{
+        font-size: 1.0rem;
+        margin-right: 0.5rem;
+    }
+}
+.item, .longer-item{
+    .flex-box();
+    width:9rem;
+    height:5rem;
+}
+#header{
+    margin-top: 1rem;
+    background-color: #525151;
+    height:3rem;
+    h1{
+        color: white;
+    }
+}
+#smaller{
+    height:3rem;
+}
+.longer-item{
+    width:18rem;
+}
+.button-display{
+    .flex-box();
+    width:54rem;
+    height:5rem;
+    border-top: 1px solid #7c7c7c;
+}
+.left-button, .right-button{
+    .flex-box();
+    width:50%;
+    height:100%;
+}
+.left-button{
+    justify-content: flex-start;
+}
+.right-button{
+    justify-content: flex-end;
+}
+.loading-display();
+@media screen and (max-width: 1100px) {
+    .item-display, .button-display{
+        width:35rem;
+    }
+    .item-display h1{
+        font-size: 0.7rem;
+    }
+    .item{
+        width:5rem
+    }
+}
+@media screen and (max-width: 650px) {
+    .item-display, .button-display{
+        width:18rem;
+    }
+    .item-display h1{
+        font-size: 0.5rem;
+    }
+}
