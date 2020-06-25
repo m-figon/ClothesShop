@@ -3,22 +3,22 @@
     <div class="make-order">
         <div class="make-order-display">
             <p>Email*</p>
-            <input [(ngModel)]="email">
+            <input autocomplete="off" [(ngModel)]="email" type="search">
             <p *ngIf="wrongEmail">Data is not correct</p>
             <p>Name*</p>
-            <input [(ngModel)]="name">
+            <input autocomplete="off" [(ngModel)]="name" type="search">
             <p *ngIf="wrongName">Data is not correct</p>
             <p>Surname*</p>
-            <input [(ngModel)]="surname">
+            <input autocomplete="off" [(ngModel)]="surname" type="search">
             <p *ngIf="wrongSurname">Data is not correct</p>
             <p>City*</p>
-            <input [(ngModel)]="city">
+            <input autocomplete="off" [(ngModel)]="city" type="search">
             <p *ngIf="wrongEmail">Data is not correct</p>
             <p>Post code*</p>
-            <input [(ngModel)]="postCode">
+            <input autocomplete="off" [(ngModel)]="postCode" type="search">
             <p *ngIf="wrongPostCode">Data is not correct</p>
             <p>Street*</p>
-            <input [(ngModel)]="street">
+            <input autocomplete="off" [(ngModel)]="street" type="search">
             <p *ngIf="wrongStreet">Data is not correct</p>
             <button (click)="changeStep()">NEXT STEP</button>
         </div>

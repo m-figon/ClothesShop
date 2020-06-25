@@ -31,7 +31,7 @@ export class DetailsComponent implements OnInit,AfterViewInit {
       else if(this.details==="pants"){
         this.post = data[1].content;
       }
-      else if(this.details==="boots"){
+      else if(this.details==="sweatshirts"){
         this.post = data[2].content;
       }
       console.log(this.post);

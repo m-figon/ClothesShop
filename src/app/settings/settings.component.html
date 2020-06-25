@@ -17,21 +17,21 @@
             <h1>CHANGING DATA</h1>
         </div>
             <p>Email*</p>
-            <input [(ngModel)]="email">
+            <input autocomplete="off" [(ngModel)]="email">
             <p>Name*</p>
-            <input [(ngModel)]="name">
+            <input autocomplete="off" [(ngModel)]="name">
             <p>Surname*</p>
-            <input [(ngModel)]="surname">
+            <input autocomplete="off" [(ngModel)]="surname">
         <button (click)="changeData()">CHANGE DATA</button>
         <div class="settings-one-line">
             <h1>CHANGING PASSWORD</h1>
         </div>
             <p>Current Password</p>
-            <input [(ngModel)]="currentPassword" type="password">
+            <input autocomplete="off" [(ngModel)]="currentPassword" type="password">
             <p>New Password</p>
-            <input [(ngModel)]="newPassword" type="password">
+            <input autocomplete="off" [(ngModel)]="newPassword" type="password">
             <p>Confirm New Password</p>
-            <input [(ngModel)]="confirmPassword" type="password">
+            <input autocomplete="off" [(ngModel)]="confirmPassword" type="password">
         <button (click)="changePassword()">CHANGE PASSWORD</button>
     </div>
 </div>

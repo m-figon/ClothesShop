@@ -121,21 +121,15 @@ export class AccountComponent implements OnInit, AfterViewInit {
     this.passwordType = "text";
   }
   changePassword() {
+    let correctFlag=false;
     for (let item of this.users) {
       if (item.email === this.resetEmail) {
-        this.http.put<any>("https://rocky-citadel-32862.herokuapp.com/ClothesShop/users/" + item.id, {
-          email: item.email,
-          name: item.name,
-          surname: item.surname,
-          password: this.resetPassword,
-          cart: item.cart,
-          orders: item.orders,
-          id: item.id
-        }).toPromise().then(data => {
-          console.log(data);
-          alert('user password changed');
-        })
+        alert('email sent');
+        correctFlag=true;
       }
+    }
+    if(!correctFlag){
+      alert('these email is not used in our page');
     }
   }
   registerFunc() {
