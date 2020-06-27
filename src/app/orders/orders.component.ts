@@ -10,7 +10,7 @@ import { AppService } from '../app.service';
 export class OrdersComponent implements OnInit,AfterViewInit {
 
   constructor(private http: HttpClient, private appService: AppService) { }
-  public users;
+  public users: any[];
   public id: number;
   public loadingFinished: boolean;
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class OrdersComponent implements OnInit,AfterViewInit {
       console.log(this.users[this.id].orders);
     })
   }
-  ngAfterViewInit() {
+  ngAfterViewInit(): void  {
     this.loadingFinished=true;
   }
 

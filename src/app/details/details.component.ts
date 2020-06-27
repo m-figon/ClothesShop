@@ -9,11 +9,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit,AfterViewInit {
-  public post;
+  public post: any;
   public id: number;
   public size: string = "size";
-  private users;
-  private logedUser;
+  private users: any[];
+  private logedUser: string;
   private type: string;
   private details: string;
   public loadingFinished: boolean;
@@ -52,10 +52,10 @@ export class DetailsComponent implements OnInit,AfterViewInit {
       return false;
     }
   }
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.loadingFinished=true;
   }
-  addToCart() {
+  addToCart(): void {
     if (this.size !== "size" && this.appService.getAccount()!=="YOUR ACCOUNT") {
       console.log(this.size);
       this.post[this.id]["size"] = this.size;

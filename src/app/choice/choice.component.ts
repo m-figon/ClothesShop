@@ -13,10 +13,10 @@ export class ChoiceComponent implements OnInit,AfterViewInit {
   public gender: string;
   public type: string;
   private lastType: string;
-  private tmp;
+  private tmp: any[];
   public loadingFinished: boolean;
   public fetchingFinished: boolean;
-  public content;
+  public content: any[];
   ngOnInit(): void {
     this.gender = (this.route.snapshot.paramMap.get('type'));
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/'+this.gender).subscribe(data => {
@@ -38,7 +38,7 @@ export class ChoiceComponent implements OnInit,AfterViewInit {
       }
     },500)
   }
-  ngAfterViewInit() {
+  ngAfterViewInit(): void  {
     this.loadingFinished=true;
   }
 

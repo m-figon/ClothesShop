@@ -10,12 +10,12 @@ import { HttpClient } from '@angular/common/http';
 export class CartComponent implements OnInit,AfterViewInit {
 
   constructor(private http: HttpClient, private appService: AppService) { }
-  public cart;
-  private users;
+  public cart: any[];
+  private users: any[];
   private logedUser: string;
   public price: number=0;
   public loadingFinished: boolean;
-  cartInit() {
+  cartInit(): void  {
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/users').subscribe(data => {
       //console.log(data);
       this.users = data;
@@ -45,11 +45,11 @@ export class CartComponent implements OnInit,AfterViewInit {
       return false;
     }
   }
-  ngAfterViewInit() {
+  ngAfterViewInit(): void  {
     this.loadingFinished=true;
   }
-  deleteItem(id) {
-    let tmp;
+  deleteItem(id: number): void  {
+    let tmp: any[];
     for (let item of this.users) {
       if (item.email === this.appService.getAccount()) {
         tmp = item.cart.slice();

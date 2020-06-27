@@ -12,15 +12,15 @@ export class AppComponent implements OnInit {
   constructor(private appService: AppService){
 
   }
-  hoverFunc(type){
+  hoverFunc(type: string): void {
     eval('this.'+type+'= !this.'+type);
   }
-  logout(){
+  logout(): void {
     this.ac=false;
     this.appService.setAccount("YOUR ACCOUNT");
     this.account=this.appService.getAccount();
   }
-  accountCheck(){
+  accountCheck(): boolean {
     if(this.account!=="YOUR ACCOUNT"){
       return true;
     }else{

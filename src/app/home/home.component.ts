@@ -9,8 +9,8 @@ export class HomeComponent implements AfterViewInit,OnInit {
 
   constructor() { }
   public loadingFinished: boolean;
-  ngOnInit(){}
-  ngAfterViewInit() {
+  ngOnInit(): void{}
+  ngAfterViewInit(): void {
     this.loadingFinished=true;
   }
 

@@ -17,7 +17,7 @@ export class AccountComponent implements OnInit, AfterViewInit {
   public login: boolean = true;
   public register: boolean = false;
   public passwordType: string = "text";
-  public users;
+  public users: any[];
   public emptyEmail: boolean;
   public emptyPassword: boolean;
   public emptyName: boolean;
@@ -26,7 +26,7 @@ export class AccountComponent implements OnInit, AfterViewInit {
   public tooltip: boolean;
   public loadingFinished: boolean;
   constructor(private http: HttpClient, private appService: AppService) { }
-  changeView() {
+  changeView(): void {
     this.login = !this.login;
     this.register = !this.register;
     this.emptyEmail = false;
@@ -40,10 +40,10 @@ export class AccountComponent implements OnInit, AfterViewInit {
     this.Surname = "Surname";
     this.passwordType="text";
   }
-  ngAfterViewInit() {
+  ngAfterViewInit(): void  {
     this.loadingFinished = true;
   }
-  focus(value1) {
+  focus(value1: string): void  {
     //console.log(value1);
     if (eval('this.' + value1) === value1) {
       eval('this.' + value1 + "=''")
@@ -60,7 +60,7 @@ export class AccountComponent implements OnInit, AfterViewInit {
     }
 
   }
-  blur(value1) {
+  blur(value1: string) : void {
     //console.log('this.'+value1+"="+"'"+value1+"'");
     if (eval('this.' + value1) === '') {
       eval('this.' + value1 + "=" + "'" + value1 + "'")
@@ -84,7 +84,7 @@ export class AccountComponent implements OnInit, AfterViewInit {
       console.log(this.users);
     })
   }
-  loginFunc() {
+  loginFunc(): void  {
     if (this.Email === "" || this.Email === " " || this.Email === "Email") {
       this.emptyEmail = true;
     }
@@ -113,7 +113,7 @@ export class AccountComponent implements OnInit, AfterViewInit {
     }
     
   }
-  showHideTooltip(value) {
+  showHideTooltip(value: boolean): void {
     this.tooltip = value;
     this.Email = "Email";
     this.Password = "Password";
@@ -121,7 +121,7 @@ export class AccountComponent implements OnInit, AfterViewInit {
     this.resetPassword = "New Password";
     this.passwordType = "text";
   }
-  changePassword() {
+  changePassword(): void  {
     let correctFlag=false;
     for (let item of this.users) {
       if (item.email === this.resetEmail) {
@@ -133,7 +133,7 @@ export class AccountComponent implements OnInit, AfterViewInit {
       alert('these email is not used in our page');
     }
   }
-  registerFunc() {
+  registerFunc(): void  {
     let correctFlag = true;
     if (!(this.Email.match(/^[a-z0-9\._\-]+@[a-z0-9\.\-]+\.[a-z]{2,4}$/) === null) && this.Email !== "" && this.Email !== " " && this.Email !== "Email") {
       console.log('email correct');

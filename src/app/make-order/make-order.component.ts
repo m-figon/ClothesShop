@@ -10,9 +10,9 @@ import * as moment from 'moment';
   styleUrls: ['./make-order.component.css']
 })
 export class MakeOrderComponent implements OnInit,AfterViewInit {
-  private tmp;
+  private tmp: any[];
   private number: number=-1;
-  public cart=[];
+  public cart: any[]=[];
   public email: string="";
   public name: string="";
   public surname: string="";
@@ -26,7 +26,7 @@ export class MakeOrderComponent implements OnInit,AfterViewInit {
   public wrongPostCode: boolean;
   public wrongStreet: boolean;
   public beginning: boolean;
-  private users;
+  private users: any[];
   private logedUser: string;
   private id: number;
   public loadingFinished: boolean;
@@ -60,10 +60,10 @@ export class MakeOrderComponent implements OnInit,AfterViewInit {
     }
     console.log(this.cart);
   }
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.loadingFinished=true;
   }
-  changeStep(){
+  changeStep(): void {
     if(!this.beginning){
       if(this.city && this.postCode && this.street && this.email && this.name && this.surname){
         let correctFlag=true;
@@ -102,7 +102,7 @@ export class MakeOrderComponent implements OnInit,AfterViewInit {
       this.beginning=!this.beginning;
     }
   }
-  createOrder() {
+  createOrder(): void {
     for (let item of this.users) {
       if (item.email === this.appService.getAccount()) {
         for(let item of this.cart){

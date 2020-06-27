@@ -11,7 +11,7 @@ export class OfferComponent implements OnInit,AfterViewInit {
   public type: string;
   private lastType: string;
   private ad: string;
-  public content;
+  public content: any[];
   public loadingFinished: boolean;
   public fetchingFinished: boolean;
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
@@ -43,7 +43,7 @@ export class OfferComponent implements OnInit,AfterViewInit {
     }, 500)
 
   }
-  ngAfterViewInit() {
+  ngAfterViewInit(): void  {
     this.loadingFinished=true;
   }
 

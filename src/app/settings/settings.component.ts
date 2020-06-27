@@ -11,7 +11,7 @@ import { IfStmt } from '@angular/compiler';
 export class SettingsComponent implements OnInit, AfterViewInit {
 
   constructor(private http: HttpClient, private appService: AppService) { }
-  private users;
+  private users: any[];
   public logedUser: string;
   private id: number;
   public email: string;
@@ -38,10 +38,10 @@ export class SettingsComponent implements OnInit, AfterViewInit {
       }
     })
   }
-  ngAfterViewInit() {
+  ngAfterViewInit(): void  {
     this.loadingFinished = true;
   }
-  changeData() {
+  changeData(): void  {
     let correctFlag = true;
     if (!(this.email.match(/^[a-z0-9\._\-]+@[a-z0-9\.\-]+\.[a-z]{2,4}$/) === null)) {
       console.log('email correct');
@@ -75,7 +75,7 @@ export class SettingsComponent implements OnInit, AfterViewInit {
       alert('wrong data')
     }
   }
-  changePassword() {
+  changePassword(): void  {
     if (this.users[this.id].password === this.currentPassword && this.newPassword === this.confirmPassword && !(this.newPassword.match(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\.\-_@$!%*#?&])[A-Za-z\d\.\-_@$!%*#?&]{8,13}$/) === null)) {
       this.http.put<any>("https://rocky-citadel-32862.herokuapp.com/ClothesShop/users/" + this.id, {
         email: this.users[this.id].email,
