@@ -9,14 +9,14 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit,AfterViewInit {
-  post;
-  id;
-  size = "size";
-  users;
-  logedUser;
-  type;
-  details;
-  loadingFinished;
+  public post;
+  public id: number;
+  public size: string = "size";
+  private users;
+  private logedUser;
+  private type: string;
+  private details: string;
+  public loadingFinished: boolean;
   constructor(private http: HttpClient, private route: ActivatedRoute, private appService: AppService) { }
 
   ngOnInit(): void {
@@ -45,7 +45,7 @@ export class DetailsComponent implements OnInit,AfterViewInit {
       this.logedUser=this.appService.getAccount();
     },500)
   }
-  accountCheck(){
+  accountCheck(): boolean{
     if(this.logedUser==="YOUR ACCOUNT"){
       return true;
     }else{

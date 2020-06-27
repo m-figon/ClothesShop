@@ -11,16 +11,16 @@ import { IfStmt } from '@angular/compiler';
 export class SettingsComponent implements OnInit, AfterViewInit {
 
   constructor(private http: HttpClient, private appService: AppService) { }
-  users;
-  logedUser;
-  id;
-  email;
-  name;
-  surname;
-  currentPassword = "";
-  newPassword = "";
-  confirmPassword = "";
-  loadingFinished;
+  private users;
+  public logedUser: string;
+  private id: number;
+  public email: string;
+  public name: string;
+  public surname: string;
+  public currentPassword: string = "";
+  public newPassword: string = "";
+  public confirmPassword: string = "";
+  public loadingFinished: boolean;
   ngOnInit(): void {
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/users').subscribe(data => {
       //console.log(data);

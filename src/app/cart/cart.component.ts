@@ -10,13 +10,11 @@ import { HttpClient } from '@angular/common/http';
 export class CartComponent implements OnInit,AfterViewInit {
 
   constructor(private http: HttpClient, private appService: AppService) { }
-  cart;
-  users;
-  id;
-  logedUser;
-  newOrder;
-  price=0;
-  loadingFinished;
+  public cart;
+  private users;
+  private logedUser: string;
+  public price: number=0;
+  public loadingFinished: boolean;
   cartInit() {
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/users').subscribe(data => {
       //console.log(data);
@@ -40,7 +38,7 @@ export class CartComponent implements OnInit,AfterViewInit {
       this.logedUser = this.appService.getAccount();
     },500)
   }
-  accountCheck(){
+  accountCheck(): boolean{
     if(this.logedUser==="YOUR ACCOUNT"){
       return true;
     }else{

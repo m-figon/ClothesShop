@@ -8,13 +8,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./offer.component.css']
 })
 export class OfferComponent implements OnInit,AfterViewInit {
-  type;
-  lastType;
-  ad;
-  content;
-  change;
-  loadingFinished;
-  fetchingFinished;
+  public type: string;
+  private lastType: string;
+  private ad: string;
+  public content;
+  public loadingFinished: boolean;
+  public fetchingFinished: boolean;
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -27,7 +26,6 @@ export class OfferComponent implements OnInit,AfterViewInit {
         this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/' + this.type).subscribe(data => {
           //console.log(data);
           this.content = data;
-          this.change = true;
           this.fetchingFinished=true;
           console.log(this.content);
         })
@@ -38,7 +36,6 @@ export class OfferComponent implements OnInit,AfterViewInit {
         this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/' + this.type).subscribe(data => {
           //console.log(data);
           this.content = data;
-          this.change = true;
           this.fetchingFinished=true;
           console.log(this.content);
         })

@@ -8,23 +8,23 @@ import { AppService } from '../app.service';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit, AfterViewInit {
-  Email = "Email";
-  Password = "Password";
-  Name = "Name";
-  resetEmail = "Email"
-  resetPassword = "New Password";
-  Surname = "Surname";
-  login = true;
-  register = false;
-  passwordType = "text";
-  users;
-  emptyEmail;
-  emptyPassword;
-  emptyName;
-  emptySurname;
-  wrongData;
-  tooltip;
-  loadingFinished;
+  public Email: string = "Email";
+  public Password: string = "Password";
+  public Name: string = "Name";
+  public resetEmail: string = "Email"
+  public resetPassword: string = "New Password";
+  public Surname: string = "Surname";
+  public login: boolean = true;
+  public register: boolean = false;
+  public passwordType: string = "text";
+  public users;
+  public emptyEmail: boolean;
+  public emptyPassword: boolean;
+  public emptyName: boolean;
+  public emptySurname: boolean;
+  public wrongData: boolean;
+  public tooltip: boolean;
+  public loadingFinished: boolean;
   constructor(private http: HttpClient, private appService: AppService) { }
   changeView() {
     this.login = !this.login;
@@ -38,6 +38,7 @@ export class AccountComponent implements OnInit, AfterViewInit {
     this.Password = "Password";
     this.Name = "Name";
     this.Surname = "Surname";
+    this.passwordType="text";
   }
   ngAfterViewInit() {
     this.loadingFinished = true;

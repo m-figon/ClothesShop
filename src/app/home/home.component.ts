@@ -8,7 +8,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 export class HomeComponent implements AfterViewInit,OnInit {
 
   constructor() { }
-  loadingFinished;
+  public loadingFinished: boolean;
   ngOnInit(){}
   ngAfterViewInit() {
     this.loadingFinished=true;

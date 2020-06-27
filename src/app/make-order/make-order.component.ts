@@ -10,26 +10,26 @@ import * as moment from 'moment';
   styleUrls: ['./make-order.component.css']
 })
 export class MakeOrderComponent implements OnInit,AfterViewInit {
-  tmp;
-  number=-1;
-  cart=[];
-  email="";
-  name="";
-  surname="";
-  city="";
-  postCode="";
-  street="";
-  wrongEmail;
-  wrongName;
-  wrongSurname;
-  wrongCity;
-  wrongPostCode;
-  wrongStreet;
-  beginning;
-  users;
-  logedUser;
-  id;
-  loadingFinished;
+  private tmp;
+  private number: number=-1;
+  public cart=[];
+  public email: string="";
+  public name: string="";
+  public surname: string="";
+  public city: string="";
+  public postCode: string="";
+  public street: string="";
+  public wrongEmail: boolean;
+  public wrongName: boolean;
+  public wrongSurname: boolean;
+  public wrongCity: boolean;
+  public wrongPostCode: boolean;
+  public wrongStreet: boolean;
+  public beginning: boolean;
+  private users;
+  private logedUser: string;
+  private id: number;
+  public loadingFinished: boolean;
   constructor(private route: ActivatedRoute, private http: HttpClient, private appService: AppService) { }
 
   ngOnInit(): void {

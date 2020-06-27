@@ -10,9 +10,9 @@ import { AppService } from '../app.service';
 export class OrdersComponent implements OnInit,AfterViewInit {
 
   constructor(private http: HttpClient, private appService: AppService) { }
-  users;
-  id;
-  loadingFinished;
+  public users;
+  public id: number;
+  public loadingFinished: boolean;
   ngOnInit(): void {
     this.http.get<any>('https://rocky-citadel-32862.herokuapp.com/ClothesShop/users').subscribe(data => {
       this.users = data;

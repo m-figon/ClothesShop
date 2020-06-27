@@ -4,14 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AppService {
-  account="YOUR ACCOUNT";
-  cart = [];
+  public account: string="YOUR ACCOUNT";
   constructor() { }
   setAccount(value){
     this.account=value;
-  }
-  getCart(){
-    return this.cart;
   }
   getAccount(){
     return(this.account);

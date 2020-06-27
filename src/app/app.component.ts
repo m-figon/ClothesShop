@@ -7,24 +7,16 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'clothes-shop';
-  account="YOUR ACCOUNT";
-  woman=false;
-  man=false;
-  ac=false;
+  public account: string="YOUR ACCOUNT";
+  public ac: boolean=false;
   constructor(private appService: AppService){
 
   }
   hoverFunc(type){
     eval('this.'+type+'= !this.'+type);
   }
-  closeFunc(){
-    this.woman=false;
-    this.man=false;
-    this.ac=false;
-  }
   logout(){
-    this.closeFunc();
+    this.ac=false;
     this.appService.setAccount("YOUR ACCOUNT");
     this.account=this.appService.getAccount();
   }
