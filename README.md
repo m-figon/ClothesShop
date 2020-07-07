@@ -1,27 +1,25 @@
-# ClothesShop
+# Clothes Shop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+Goal of this project was creating a shopping website which allows user to look for an item, add it to shopping cart and make an order.
 
-## Development server
+To sign in use email 'test@gmail.com' and password: 'test123' (login allows to add items to cart, display cart content, make orders).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Used frameworks, languages, libraries
 
-## Code scaffolding
+* Angular
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* TypeScript
 
-## Build
+* HTML & CSS
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Less
 
-## Running unit tests
+## Netlify app link 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+https://clothes-shop-mfigon.netlify.app/
 
-## Running end-to-end tests
+## Nettlify portfolio link
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+https://portfolio-mfigon.netlify.app/
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
