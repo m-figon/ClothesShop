@@ -16,12 +16,13 @@
   align-items: center;
   width: auto;
   height: 100%;
-  border-top: 1.5px solid rgba(0, 0, 0, 0);
+  border-top: 2px solid rgba(0, 0, 0, 0);
   margin-left: 1rem;
   margin-right: 1rem;
+  transition: border-top 1s;
 }
 .nav-bar .text:hover {
-  border-top: 1.5px solid black;
+  border-top: 2px solid black;
 }
 .nav-bar h1 {
   font-weight: 300;
@@ -56,6 +57,7 @@
   font-weight: 300;
   font-size: 0.8rem;
   letter-spacing: 1px;
+  transition: text-decoration 500ms;
 }
 .options-account h1:hover {
   text-decoration: underline;
