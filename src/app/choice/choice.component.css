@@ -1,3 +1,11 @@
+@keyframes showImg {
+  0% {
+    filter: opacity(30%);
+  }
+  100% {
+    filter: opacity(100%);
+  }
+}
 .choice {
   margin-top: 5rem;
   width: 100vw;
@@ -63,6 +71,11 @@
   height: 15rem;
   margin-bottom: 0.5rem;
   border: 1px solid #e4e4e4;
+  animation: showImg ease 2s;
+  -webkit-animation: showImg ease 2s;
+  -moz-animation: showImg ease 2s;
+  -o-animation: showImg ease 2s;
+  -ms-animation: showImg ease 2s;
 }
 .cloth h1 {
   font-size: 1rem;

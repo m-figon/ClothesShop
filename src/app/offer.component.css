@@ -1,6 +1,6 @@
 @keyframes showImg {
   0% {
-    filter: opacity(30%);
+    filter: opacity(10%);
   }
   100% {
     filter: opacity(100%);
@@ -18,11 +18,11 @@
 .offer img {
   height: 40rem;
   width: 60rem;
-  animation: showImg ease 2s;
-  -webkit-animation: showImg ease 2s;
-  -moz-animation: showImg ease 2s;
-  -o-animation: showImg ease 2s;
-  -ms-animation: showImg ease 2s;
+  animation: showImg ease 4s;
+  -webkit-animation: showImg ease 4s;
+  -moz-animation: showImg ease 4s;
+  -o-animation: showImg ease 4s;
+  -ms-animation: showImg ease 4s;
 }
 .ad-text {
   position: absolute;

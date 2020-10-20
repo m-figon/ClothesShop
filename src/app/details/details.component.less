@@ -1,4 +1,12 @@
 @import "../main";
+@keyframes showImg {
+    0% {
+      filter: opacity(30%);
+    }
+    100% {
+      filter: opacity(100%);
+    }
+  }
 .details {
     margin-top: 3rem;
     width: 100vw;
@@ -20,6 +28,7 @@
     img {
         height: 25rem;
         width: 20rem;
+        .animationImg();
     }
     
     h1 {

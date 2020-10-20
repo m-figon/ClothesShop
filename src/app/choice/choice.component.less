@@ -1,4 +1,12 @@
 @import "../main";
+@keyframes showImg {
+    0% {
+      filter: opacity(30%);
+    }
+    100% {
+      filter: opacity(100%);
+    }
+  }
 .choice{
     margin-top:5rem;
     width:100vw;
@@ -59,6 +67,7 @@
         height:15rem;
         margin-bottom: 0.5rem;
         border: 1px solid rgb(228, 228, 228);
+        .animationImg();
     }
     h1{
         font-size: 1.0rem;

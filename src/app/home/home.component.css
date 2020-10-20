@@ -1,3 +1,11 @@
+@keyframes showImg {
+  0% {
+    filter: opacity(10%);
+  }
+  100% {
+    filter: opacity(100%);
+  }
+}
 .home {
   margin-top: 3rem;
   width: 100vw;
@@ -8,6 +16,11 @@
 .home img {
   width: 100vw;
   height: 100%;
+  animation: showImg ease 2s;
+  -webkit-animation: showImg ease 2s;
+  -moz-animation: showImg ease 2s;
+  -o-animation: showImg ease 2s;
+  -ms-animation: showImg ease 2s;
 }
 .home button {
   position: absolute;

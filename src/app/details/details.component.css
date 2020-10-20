@@ -1,3 +1,11 @@
+@keyframes showImg {
+  0% {
+    filter: opacity(30%);
+  }
+  100% {
+    filter: opacity(100%);
+  }
+}
 .details {
   margin-top: 3rem;
   width: 100vw;
@@ -24,6 +32,11 @@
 .detail img {
   height: 25rem;
   width: 20rem;
+  animation: showImg ease 2s;
+  -webkit-animation: showImg ease 2s;
+  -moz-animation: showImg ease 2s;
+  -o-animation: showImg ease 2s;
+  -ms-animation: showImg ease 2s;
 }
 .detail h1 {
   font-size: 1.2rem;
